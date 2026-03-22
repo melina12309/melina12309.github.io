@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melina Giorgalletou — Marketing Strategist, Content Creator, Journalist</title>
+  <meta name="description" content="Portfolio of Melina Giorgalletou — Marketing strategist, content creator, and journalist bridging creative storytelling, data-driven strategy, and AI-powered workflows.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #000000;
+      --ink: #111111;
+      --charcoal: #222222;
+      --slate: #555555;
+      --grey: #888888;
+      --silver: #aaaaaa;
+      --light: #e5e5e5;
+      --cream: #f5f5f5;
+      --paper: #fafafa;
+      --white: #ffffff;
+      --accent: #6c5ce7;
+      --accent-soft: rgba(108, 92, 231, 0.07);
+      --accent-hover: #5a4bd1;
+      --teal: #333333;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--accent-hover); }
+
+    /* ---- NAVIGATION ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0 3rem;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--grey);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--black); }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: var(--accent);
+    }
+
+    .nav-contact {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      background: var(--accent);
+      padding: 0.5rem 1.4rem;
+      border-radius: 8px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .nav-contact:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+      color: var(--white) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 8rem 3rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      gap: 4rem;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-photo-area {
+      position: relative;
+      width: 340px;
+      height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo-wrapper {
+      position: relative;
+      width: 280px;
+      height: 360px;
+      border-radius: 200px 200px 20px 20px;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--cream) 0%, #e0ddd5 50%, var(--light) 100%);
+      z-index: 2;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      will-change: transform;
+    }
+
+    .hero-photo-wrapper:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Floating decorative elements */
+    .photo-orbit {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .photo-orbit-1 {
+      width: 60px;
+      height: 60px;
+      border: 1.5px solid var(--black);
+      top: 10px;
+      right: -10px;
+      animation: float-1 6s ease-in-out infinite;
+    }
+
+    .photo-orbit-2 {
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      bottom: 80px;
+      left: -8px;
+      animation: float-2 5s ease-in-out infinite;
+    }
+
+    .photo-orbit-3 {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--light);
+      bottom: 20px;
+      right: 10px;
+      border-radius: 4px;
+      animation: float-3 7s ease-in-out infinite;
+    }
+
+    .photo-orbit-5 {
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid var(--black);
+      top: -15px;
+      left: 40px;
+      animation: float-2 8s ease-in-out infinite reverse;
+    }
+
+    .photo-orbit-4 {
+      width: 8px;
+      height: 8px;
+      background: var(--black);
+      top: 60px;
+      left: 10px;
+      animation: float-4 4s ease-in-out infinite;
+    }
+
+
+
+    /* Accent line behind photo */
+    .photo-line-accent {
+      position: absolute;
+      width: 1.5px;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--black), transparent);
+      right: 30px;
+      top: -30px;
+      z-index: 0;
+      animation: line-pulse 3s ease-in-out infinite;
+    }
+
+    .photo-line-accent-2 {
+      position: absolute;
+      width: 80px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, var(--light), transparent);
+      left: -20px;
+      bottom: 60px;
+      z-index: 0;
+      animation: line-pulse 4s ease-in-out infinite 1s;
+    }
+
+    /* Cross/plus marker */
+    .photo-cross {
+      position: absolute;
+      z-index: 1;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      font-weight: 300;
+      animation: float-1 5s ease-in-out infinite 2s;
+    }
+
+    .photo-cross-1 {
+      top: -5px;
+      right: 50px;
+    }
+
+    .photo-cross-2 {
+      bottom: 40px;
+      left: -15px;
+    }
+
+    .hero-photo-label {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+      background: var(--paper);
+      padding: 0.3rem 1rem;
+      white-space: nowrap;
+      z-index: 4;
+    }
+
+    @keyframes float-1 {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(8deg); }
+    }
+
+    @keyframes float-2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      33% { transform: translateY(-8px) translateX(4px); }
+      66% { transform: translateY(4px) translateX(-4px); }
+    }
+
+    @keyframes float-3 {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(-15deg); }
+    }
+
+    @keyframes float-4 {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.6; }
+    }
+
+    @keyframes line-pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .hero-issue {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 2rem;
+    }
+
+    .hero-issue span {
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1.5px;
+      background: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--slate);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-meta-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-meta-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, var(--light), transparent);
+    }
+
+    /* ---- SECTION COMMONS ---- */
+    .section-break {
+      display: none;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem 6rem;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(108, 92, 231, 0.06);
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.15;
+    }
+
+    .section-title em { font-style: italic; }
+
+    /* ---- ABOUT ---- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      float: left;
+      line-height: 1;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .about-sidebar {
+      border-left: 1px solid var(--light);
+      padding-left: 2.5rem;
+    }
+
+    .about-detail {
+      margin-bottom: 2rem;
+    }
+
+    .about-detail-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-detail-value {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .about-languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .lang-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(108, 92, 231, 0.06);
+      color: var(--accent);
+      border-radius: 20px;
+    }
+
+    /* ---- PUBLISHED IN BAR ---- */
+    .credibility-bar {
+      max-width: 1200px;
+      margin: -2rem auto 0;
+      padding: 2rem 3rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .credibility-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver);
+      white-space: nowrap;
+    }
+
+    .credibility-line {
+      flex: 0 0 40px;
+      height: 1px;
+      background: var(--light);
+    }
+
+    .credibility-items {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .credibility-item {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--slate);
+      white-space: nowrap;
+      transition: color 0.3s;
+    }
+
+    .credibility-item:hover {
+      color: var(--accent);
+    }
+
+    .credibility-sep {
+      color: var(--light);
+      font-size: 0.7rem;
+    }
+
+    /* ---- TOOLS MARQUEE ---- */
+    .marquee-section {
+      overflow: hidden;
+      padding: 1.8rem 0;
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      position: relative;
+    }
+
+    .marquee-section::before,
+    .marquee-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-section::before {
+      left: 0;
+      background: linear-gradient(to right, var(--paper), transparent);
+    }
+
+    .marquee-section::after {
+      right: 0;
+      background: linear-gradient(to left, var(--paper), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 40s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .marquee-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .marquee-item:nth-child(even) .marquee-dot {
+      background: var(--black);
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ---- EXPERIENCE ---- */
+    .exp-timeline {
+      position: relative;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--light);
+      position: relative;
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+      padding-top: 0.3rem;
+    }
+
+    .exp-industry {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--silver);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    .exp-content h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-company {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ---- CASE STUDIES ---- */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .case-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.04);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 16px;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(108, 92, 231, 0.12);
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .case-card:hover::before { transform: scaleX(1); }
+
+    .case-number {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(108,92,231,0.06), rgba(108,92,231,0.06));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .case-industry {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .case-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .case-company {
+      font-size: 0.82rem;
+      color: var(--grey);
+      margin-bottom: 1rem;
+    }
+
+    .case-desc {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      padding-top: 1.2rem;
+    }
+
+    .case-stat-value {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .case-stat-label {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 0.1rem;
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+    }
+
+    .case-tag {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.7rem;
+      background: rgba(108, 92, 231, 0.06);
+      color: var(--accent);
+      border-radius: 20px;
+    }
+
+    /* Feature case */
+    .case-feature {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background: var(--black);
+      color: var(--cream);
+      padding: 3rem;
+      border-color: transparent;
+      border-radius: 20px;
+    }
+
+    .case-feature .case-industry { color: var(--accent); }
+    .case-feature .case-title { color: var(--white); font-size: 1.5rem; }
+    .case-feature .case-company { color: var(--silver); }
+    .case-feature .case-desc { color: rgba(255,255,255,0.7); }
+    .case-feature .case-stat-value { color: var(--white); font-size: 2rem; }
+    .case-feature .case-stat-label { color: rgba(255,255,255,0.4); }
+    .case-feature .case-tag { background: rgba(108, 92, 231, 0.12); color: var(--accent); }
+    .case-feature .case-number { background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(108,92,231,0.08)); -webkit-text-fill-color: transparent; }
+    .case-feature::before { background: var(--accent); }
+
+    /* Portfolio CTA inside cases */
+    .portfolio-cta-inline {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.8rem 2.2rem;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.04);
+      border-radius: 16px;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .portfolio-cta-inline:hover {
+      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(108, 92, 231, 0.12);
+      transform: translateY(-4px);
+      text-decoration: none;
+    }
+
+    .portfolio-cta-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .portfolio-cta-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .portfolio-cta-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--white);
+    }
+
+    .portfolio-cta-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    .portfolio-cta-desc {
+      font-size: 0.8rem;
+      color: var(--grey);
+      margin-top: 0.2rem;
+    }
+
+    .portfolio-cta-arrow {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .portfolio-cta-inline:hover .portfolio-cta-arrow {
+      transform: translateX(6px);
+    }
+
+    /* ---- SOCIAL ACCOUNTS MANAGED ---- */
+    .socials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.04);
+      border-radius: 14px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .social-info {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .social-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.05);
+      border-color: rgba(108, 92, 231, 0.15);
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .social-icon.tiktok { background: #00002015; }
+    .social-icon.instagram { background: #E1306C15; }
+    .social-icon.linkedin { background: #0077B515; }
+    .social-icon.youtube { background: #FF000015; }
+    .social-icon.x { background: #00000010; }
+
+    .social-info h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.15rem;
+    }
+
+    .social-handle {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
+
+    .social-role {
+      font-size: 0.7rem;
+      color: var(--grey);
+      margin-top: 0.15rem;
+    }
+
+    /* ---- CONTACT ---- */
+    .contact-section {
+      background: var(--black);
+      padding: 3.5rem 3rem;
+      max-width: none;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-left {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .contact-left .section-label {
+      color: var(--accent);
+      margin-bottom: 0;
+    }
+
+    .contact-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .contact-title em { font-style: italic; }
+
+    .contact-subtitle {
+      color: var(--grey);
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--silver);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-link:hover {
+      border-color: rgba(108, 92, 231, 0.3);
+      color: var(--white);
+      background: rgba(108, 92, 231, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .contact-link svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--black);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--grey);
+    }
+
+    .footer-right {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--grey);
+      letter-spacing: 0.1em;
+    }
+
+    /* ---- ANIMATIONS ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Stat counter animation */
+    .case-stat-value {
+      transition: opacity 0.4s;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-contact { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { padding: 7rem 1.5rem 3rem; grid-template-columns: 1fr; }
+      .hero-photo-area { order: -1; justify-self: center; width: 240px; height: 320px; }
+      .hero-photo-wrapper { width: 200px; height: 260px; border-radius: 140px 140px 16px 16px; }
+      .photo-line-accent, .photo-line-accent-2 { display: none; }
+      section { padding: 4rem 1.5rem 4rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--light); padding-top: 2rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .exp-date { padding-top: 0; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-feature { grid-template-columns: 1fr; }
+      .socials-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 1.5rem; }
+      .hero::after { display: none; }
+      .credibility-bar { flex-wrap: wrap; gap: 1rem; padding: 1.5rem; }
+      .credibility-items { flex-wrap: wrap; gap: 1rem; }
+      .portfolio-cta-inline { flex-direction: column; text-align: center; gap: 1rem; }
+      .portfolio-cta-left { flex-direction: column; }
+      .contact-section { padding: 2.5rem 1.5rem; flex-direction: column; text-align: center; }
+      .contact-left { flex-direction: column; align-items: center; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* Mobile nav menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--light);
+      padding: 1.5rem;
+      z-index: 999;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.8rem 0;
+      color: var(--charcoal);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="nav-name">Melina Giorgalletou</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#accounts">Accounts</a></li>
+    </ul>
+    <a href="#contact" class="nav-contact">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Case Studies</a>
+    <a href="#accounts">Accounts</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-issue">
+        <span>Portfolio</span> &mdash; Stockholm, Sweden
+      </div>
+
+      <h1 class="reveal">
+        Marketing<br>
+        Strategist &<br>
+        <em>Storyteller</em>
+      </h1>
+
+      <div class="hero-divider reveal reveal-delay-1"></div>
+
+      <p class="hero-desc reveal reveal-delay-2">
+        Bridging creative content, data-driven strategy, and AI-powered workflows.
+        From building global influencer programs to writing for national publications, I turn ideas into measurable impact.
+      </p>
+
+      <div class="hero-meta reveal reveal-delay-3">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Current Role</span>
+          <span class="hero-meta-value">Social Media Coordinator</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Company</span>
+          <span class="hero-meta-value">Supernormal (AI/Tech)</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Education</span>
+          <span class="hero-meta-value">MSc Marketing Communication</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Industries</span>
+          <span class="hero-meta-value">Tech, Fintech, Beauty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo-area reveal reveal-delay-2" id="photoArea">
+      <!-- Floating decorative elements -->
+      <div class="photo-orbit photo-orbit-1"></div>
+      <div class="photo-orbit photo-orbit-2"></div>
+      <div class="photo-orbit photo-orbit-3"></div>
+      <div class="photo-orbit photo-orbit-4"></div>
+      <div class="photo-orbit photo-orbit-5"></div>
+      <div class="photo-line-accent"></div>
+      <div class="photo-line-accent-2"></div>
+      <span class="photo-cross photo-cross-1">+</span>
+      <span class="photo-cross photo-cross-2">+</span>
+
+      <div class="hero-photo-wrapper" id="photoWrapper">
+        <img src="melina-nobg.png" alt="Melina Giorgalletou" class="hero-photo">
+      </div>
+      <div class="hero-photo-label">Stockholm, SE</div>
+    </div>
+  </section>
+
+  <!-- Tools Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span>Social Media Strategy</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Influencer Marketing</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Video Production</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Adobe Creative Suite</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Premiere Pro</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Figma</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Claude AI</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>AI Agent Building</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Paid Social</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>GA4 Analytics</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Content Strategy</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>UGC Direction</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Copywriting</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>CapCut</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Notion</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Canva</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>SEO</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Looker Studio</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span>Social Media Strategy</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Influencer Marketing</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Video Production</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Adobe Creative Suite</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Premiere Pro</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Figma</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Claude AI</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>AI Agent Building</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Paid Social</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>GA4 Analytics</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Content Strategy</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>UGC Direction</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Copywriting</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>CapCut</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Notion</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Canva</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>SEO</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Looker Studio</span>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="section-break">
+    <div class="section-break-inner">
+      <span class="section-break-number">01</span>
+      <span class="section-break-title">About</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          Growing up between Cyprus and New York gave me something most marketers don't start with: an instinct for how stories land across cultures. I studied journalism at Hunter College, spent four years on the Dean's List, and got my first bylines in TV Guide Magazine before I even graduated. Writing for real people, not algorithms, is where it all started.
+        </p>
+        <p>
+          From there I moved into marketing, got my MSc in Marketing Communication from Stockholm University, and haven't looked back. I've built an influencer program from scratch at an AI startup, run social strategy across six global markets for a fintech company, and led content for a premium beauty brand. I've worked across three countries and way too many time zones.
+        </p>
+        <p>
+          What makes me different? I'm the full package. I can write the brief, shoot and edit the content, analyze the data, and then build AI-powered tools to automate the boring parts. I don't just plan campaigns, I make them happen from start to finish. And I actually enjoy every part of it.
+        </p>
+      </div>
+
+      <div class="about-sidebar reveal reveal-delay-2">
+        <div class="about-detail">
+          <div class="about-detail-label">Location</div>
+          <div class="about-detail-value">Stockholm, Sweden<br><span style="color: var(--accent); font-size: 0.8rem; font-weight: 500;">Open to relocation worldwide</span></div>
+        </div>
+
+        <div class="about-detail">
+          <div class="about-detail-label">Education</div>
+          <div class="about-detail-value">
+            MSc Marketing Communication, Stockholm University<br>
+            BA Media Studies & Journalism, Hunter College (CUNY)
+          </div>
+        </div>
+
+        <div class="about-detail">
+          <div class="about-detail-label">Industries</div>
+          <div class="about-detail-value">AI/Tech, Fintech, Beauty/Lifestyle</div>
+        </div>
+
+        <div class="about-detail">
+          <div class="about-detail-label">Languages</div>
+          <div class="about-languages">
+            <span class="lang-tag">Greek (Native)</span>
+            <span class="lang-tag">English (Bilingual, C2)</span>
+            <span class="lang-tag">Italian (Beginner)</span>
+            <span class="lang-tag">Swedish (Beginner)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Published In -->
+  <div class="credibility-bar reveal">
+    <span class="credibility-label">Published in</span>
+    <span class="credibility-line"></span>
+    <div class="credibility-items">
+      <span class="credibility-item">TV Guide Magazine</span>
+      <span class="credibility-sep">/</span>
+      <span class="credibility-item">The Athenian, Hunter College</span>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="section-break">
+    <div class="section-break-inner">
+      <span class="section-break-number">02</span>
+      <span class="section-break-title">Experience</span>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-header">
+      <div class="section-label reveal">Career</div>
+      <h2 class="section-title reveal">Where I've <em>Worked</em></h2>
+    </div>
+
+    <div class="exp-timeline">
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-date">Aug 2025 &mdash; Present</div>
+          <div class="exp-industry">AI / Tech</div>
+        </div>
+        <div class="exp-content">
+          <h3>Social Media Coordinator (Organic & Paid Social)</h3>
+          <div class="exp-company">Supernormal &mdash; Stockholm, Sweden</div>
+          <ul class="exp-bullets">
+            <li>Produce short-form video content end-to-end (concepting, filming, editing) for TikTok, Instagram Reels, LinkedIn, and YouTube Shorts</li>
+            <li>Plan and execute creative campaigns supporting product launches, feature updates, and brand announcements across 5 platforms</li>
+            <li>Create professional product demo videos from recording through post-production, optimized for social performance</li>
+            <li>Develop and implement social media strategies to increase reach, engagement, and follower growth across all channels</li>
+            <li>Manage influencer partnerships using Passionfroot and Later: outreach, briefing, negotiation, and end-to-end collaboration management, resulting in multiple viral-performing videos</li>
+            <li>Manage all official social media accounts (TikTok, Instagram, LinkedIn, YouTube, X), driving community engagement and strengthening brand presence</li>
+            <li>Build AI-powered marketing workflows using Claude Code: automated influencer analytics dashboards, social media scrapers, UTM/Bitly generators, Notion campaign management, and Google Sheets reporting pipelines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-date">Feb &mdash; Sep 2025</div>
+          <div class="exp-industry">Beauty / Lifestyle</div>
+        </div>
+        <div class="exp-content">
+          <h3>Social Media & Creative Content Manager</h3>
+          <div class="exp-company">Honestly Pure Beauty &mdash; Stockholm, Sweden</div>
+          <ul class="exp-bullets">
+            <li>Drove social media art direction and content creation for a premium beauty brand, increasing share rate by 28%</li>
+            <li>Conceptualized, shot, and edited social-first Reels, UGC, and motion assets aligned with Nordic brand guidelines</li>
+            <li>Created visual systems, graphics, and micro-animations for campaigns, newsletters, and paid activations</li>
+            <li>Led influencer and creator collaborations from sourcing and briefing to content approvals and publishing</li>
+            <li>Coordinated small-scale shoots and content productions, managing briefs and creative direction with external creators</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-date">Jan 2024 &mdash; Feb 2025</div>
+          <div class="exp-industry">Fintech</div>
+        </div>
+        <div class="exp-content">
+          <h3>Global Influencer & Social Media Specialist</h3>
+          <div class="exp-company">IQ Option Global Ltd &mdash; Limassol, Cyprus</div>
+          <ul class="exp-bullets">
+            <li>Owned content and channel strategy across six global markets, adapting creative to local audience behavior</li>
+            <li>Planned and delivered paid social creative for Meta and TikTok with media and communications teams</li>
+            <li>Translated market insights, performance data, and competitor analysis into content optimization initiatives</li>
+            <li>Supported strategic decisions through reporting, KPI tracking, and performance analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-date">Aug 2022 &mdash; Jan 2024</div>
+          <div class="exp-industry">Fintech</div>
+        </div>
+        <div class="exp-content">
+          <h3>Social Media Management Assistant</h3>
+          <div class="exp-company">IQ Option Global Ltd &mdash; Limassol, Cyprus</div>
+          <ul class="exp-bullets">
+            <li>Executed data-informed campaigns, improving audience engagement by 7%</li>
+            <li>Created spreadsheets using Excel for monthly reporting and social media content plans</li>
+            <li>Sourced and coordinated influencer collaborations, including outreach, gifting, and reporting</li>
+            <li>Assisted with campaign launches, creator lists, campaign timelines, and KPI reporting</li>
+            <li>Supported paid/organic content strategy and audience growth projects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-break">
+    <div class="section-break-inner">
+      <span class="section-break-number">03</span>
+      <span class="section-break-title">Case Studies</span>
+    </div>
+  </div>
+
+  <!-- Case Studies -->
+  <section id="work">
+    <div class="section-header">
+      <div class="section-label reveal">Proof of Work</div>
+      <h2 class="section-title reveal">Campaigns & <em>Impact</em></h2>
+    </div>
+
+    <div class="cases-grid">
+      <!-- Feature Case -->
+      <div class="case-card case-feature reveal">
+        <div>
+          <span class="case-number">01</span>
+          <div class="case-industry">AI / Tech &mdash; Supernormal</div>
+          <h3 class="case-title">Building an Influencer Program from Zero</h3>
+          <div class="case-company">Supernormal &mdash; 2025&ndash;Present</div>
+          <p class="case-desc">
+            Designed and launched Supernormal's entire influencer marketing program from scratch. Sourced creators across TikTok, Instagram, YouTube, and LinkedIn. Built end-to-end workflows from outreach and briefing through negotiation, UTM tracking, and performance reporting. Managed 20+ active creator partnerships simultaneously.
+          </p>
+          <p class="case-desc">
+            Built custom AI-powered tools using Claude Code to automate scraping, analytics dashboards, weekly rankings, and Notion-based campaign management, turning a manual process into a scalable system.
+          </p>
+          <div class="case-tags">
+            <span class="case-tag">Influencer Marketing</span>
+            <span class="case-tag">AI Automation</span>
+            <span class="case-tag">Creator Management</span>
+            <span class="case-tag">Performance Analytics</span>
+          </div>
+        </div>
+        <div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-value" data-count="20" data-suffix="+">0</div>
+              <div class="case-stat-label">Active Creators</div>
+            </div>
+            <div>
+              <div class="case-stat-value" data-prefix="$" data-count="0.05" data-decimal="true">$0</div>
+              <div class="case-stat-label">Target CPV Hit</div>
+            </div>
+            <div>
+              <div class="case-stat-value" data-count="200" data-suffix="+">0</div>
+              <div class="case-stat-label">Posts Managed</div>
+            </div>
+            <div>
+              <div class="case-stat-value" data-count="5">0</div>
+              <div class="case-stat-label">Platforms</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card reveal">
+        <span class="case-number">02</span>
+        <div class="case-industry">Fintech &mdash; IQ Option</div>
+        <h3 class="case-title">Global Social Strategy Across 6 Markets</h3>
+        <div class="case-company">IQ Option Global &mdash; 2022&ndash;2025</div>
+        <p class="case-desc">
+          Owned content strategy and channel management across six international markets. Adapted creative for local audiences while maintaining brand consistency. Planned and delivered paid social campaigns on Meta and TikTok, translating performance data into actionable optimizations.
+        </p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-value" data-count="6">0</div>
+            <div class="case-stat-label">Global Markets</div>
+          </div>
+          <div>
+            <div class="case-stat-value" data-prefix="+" data-count="7" data-suffix="%">0</div>
+            <div class="case-stat-label">Engagement Lift</div>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-tag">Global Strategy</span>
+          <span class="case-tag">Paid Social</span>
+          <span class="case-tag">Content Localization</span>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card reveal">
+        <span class="case-number">03</span>
+        <div class="case-industry">Beauty / Lifestyle</div>
+        <h3 class="case-title">Premium Brand Content & +28% Share Rate</h3>
+        <div class="case-company">Honestly Pure Beauty &mdash; 2025</div>
+        <p class="case-desc">
+          Led social media art direction and end-to-end content creation for a Nordic premium beauty brand. Conceptualized, shot, and edited Reels, UGC, and motion assets. Managed influencer collaborations from sourcing through publishing. Created visual systems for campaigns, newsletters, and paid activations.
+        </p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-value" data-prefix="+" data-count="28" data-suffix="%">0</div>
+            <div class="case-stat-label">Share Rate Increase</div>
+          </div>
+          <div>
+            <div class="case-stat-value">E2E</div>
+            <div class="case-stat-label">Content Production</div>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-tag">Art Direction</span>
+          <span class="case-tag">UGC</span>
+          <span class="case-tag">Brand Content</span>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="case-card reveal">
+        <span class="case-number">04</span>
+        <div class="case-industry">AI / Tech &mdash; Supernormal</div>
+        <h3 class="case-title">AI-Powered Marketing Operations</h3>
+        <div class="case-company">Supernormal &mdash; 2025&ndash;Present</div>
+        <p class="case-desc">
+          Built a suite of AI-powered tools using Claude Code to automate marketing workflows: real-time influencer analytics dashboards, automated social media scrapers, UTM generators with Bitly integration, Notion-based campaign management, and automated Google Sheets reporting. Turned hours of manual work into one-command operations.
+        </p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-value" data-count="10" data-suffix="+">0</div>
+            <div class="case-stat-label">Custom AI Tools</div>
+          </div>
+          <div>
+            <div class="case-stat-value">Auto</div>
+            <div class="case-stat-label">Reporting Pipeline</div>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-tag">Claude Code</span>
+          <span class="case-tag">AI Agents</span>
+          <span class="case-tag">Automation</span>
+          <span class="case-tag">Data Pipelines</span>
+        </div>
+      </div>
+
+      <!-- Portfolio Link -->
+      <a href="https://melinagiorgalletou.wixsite.com/melina-giorgalletou/portfolio-collections/my-portfolio" target="_blank" class="portfolio-cta-inline reveal">
+        <div class="portfolio-cta-left">
+          <div class="portfolio-cta-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div>
+            <div class="portfolio-cta-title">View Full Creative Portfolio</div>
+            <div class="portfolio-cta-desc">Brand campaigns, social content, email marketing, video, and graphic design work</div>
+          </div>
+        </div>
+        <span class="portfolio-cta-arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-break">
+    <div class="section-break-inner">
+      <span class="section-break-number">04</span>
+      <span class="section-break-title">Accounts Managed</span>
+    </div>
+  </div>
+
+  <!-- Social Accounts -->
+  <section id="accounts">
+    <div class="section-header">
+      <div class="section-label reveal">Social Accounts</div>
+      <h2 class="section-title reveal">Brands I've <em>Managed</em></h2>
+    </div>
+
+    <div class="socials-grid">
+      <a href="https://www.tiktok.com/@supernormal_app" target="_blank" class="social-card reveal" style="text-decoration:none;color:inherit;">
+        <div class="social-icon tiktok">T</div>
+        <div class="social-info">
+          <h4>Supernormal</h4>
+          <div class="social-handle">@supernormal_app</div>
+          <div class="social-role">TikTok: Content creation, strategy</div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/supernormal_ai/" target="_blank" class="social-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;">
+        <div class="social-icon instagram">I</div>
+        <div class="social-info">
+          <h4>Supernormal</h4>
+          <div class="social-handle">@supernormal_ai</div>
+          <div class="social-role">Instagram: Reels, Stories, feed</div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/company/supernormalapp" target="_blank" class="social-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;">
+        <div class="social-icon linkedin">L</div>
+        <div class="social-info">
+          <h4>Supernormal</h4>
+          <div class="social-handle">@supernormalapp</div>
+          <div class="social-role">LinkedIn: Thought leadership, product updates</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@supernormalapp" target="_blank" class="social-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+        <div class="social-icon youtube">Y</div>
+        <div class="social-info">
+          <h4>Supernormal</h4>
+          <div class="social-handle">@supernormalapp</div>
+          <div class="social-role">YouTube: Videos, Shorts</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/supernormal_ai" target="_blank" class="social-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+        <div class="social-icon x">X</div>
+        <div class="social-info">
+          <h4>Supernormal</h4>
+          <div class="social-handle">@supernormal_ai</div>
+          <div class="social-role">X: Announcements, engagement</div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/honestlypurebeautyshop/" target="_blank" class="social-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+        <div class="social-icon instagram">I</div>
+        <div class="social-info">
+          <h4>Honestly Pure Beauty</h4>
+          <div class="social-handle">@honestlypurebeautyshop</div>
+          <div class="social-role">Instagram: Art direction, Reels, UGC</div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/iqoption_official/" target="_blank" class="social-card reveal reveal-delay-3" style="text-decoration:none;color:inherit;">
+        <div class="social-icon instagram">I</div>
+        <div class="social-info">
+          <h4>IQ Option</h4>
+          <div class="social-handle">@iqoption_official</div>
+          <div class="social-role">Instagram: Global (6 markets), paid + organic</div>
+        </div>
+      </a>
+
+      <a href="https://www.tiktok.com/@iqoption_official" target="_blank" class="social-card reveal reveal-delay-3" style="text-decoration:none;color:inherit;">
+        <div class="social-icon tiktok">T</div>
+        <div class="social-info">
+          <h4>IQ Option</h4>
+          <div class="social-handle">@iqoption_official</div>
+          <div class="social-role">TikTok: Paid creative, content strategy</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-left">
+      <div>
+        <div class="contact-title">Let's <em>work together</em></div>
+        <div class="contact-subtitle">Based in Stockholm &middot; Open to relocation &middot; Available now</div>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:melinageorgalletou@outlook.com" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/melina-giorgalletou/" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:+46729180154" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +46 729 180 154
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">Melina Giorgalletou &copy; 2026</div>
+    <div class="footer-right">Built with care in Stockholm</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav highlighting on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-60px 0px -40% 0px' });
+
+    sections.forEach(section => navObserver.observe(section));
+
+    // Animated stat counters
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const count = parseFloat(el.dataset.count);
+          if (isNaN(count)) return;
+
+          const prefix = el.dataset.prefix || '';
+          const suffix = el.dataset.suffix || '';
+          const isDecimal = el.dataset.decimal === 'true';
+          const duration = 1200;
+          const start = performance.now();
+
+          const animate = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = eased * count;
+
+            if (isDecimal) {
+              el.textContent = prefix + current.toFixed(2) + suffix;
+            } else {
+              el.textContent = prefix + Math.round(current) + suffix;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          requestAnimationFrame(animate);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.case-stat-value[data-count]').forEach(el => {
+      statObserver.observe(el);
+    });
+
+    // Photo tilt on mouse move
+    const photoArea = document.getElementById('photoArea');
+    const photoWrapper = document.getElementById('photoWrapper');
+
+    if (photoArea && photoWrapper) {
+      photoArea.addEventListener('mousemove', (e) => {
+        const rect = photoArea.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        photoWrapper.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`;
+      });
+
+      photoArea.addEventListener('mouseleave', () => {
+        photoWrapper.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0)';
+      });
+    }
+  </script>
+</body>
+</html>

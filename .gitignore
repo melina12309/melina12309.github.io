@@ -1,0 +1,7 @@
+# Only publish website files - ignore everything else
+*
+!.gitignore
+!index.html
+!melina-nobg.png
+!work/
+!work/*
