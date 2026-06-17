@@ -12,20 +12,20 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black: #14110F;
-      --ink: #1A1714;
-      --charcoal: #3A342E;
-      --slate: #6B6258;
-      --grey: #978E82;
-      --silver: #BEB6A9;
-      --light: #E7E0D6;
-      --cream: #F1ECE4;
-      --paper: #FAF8F5;
+      --black: #000000;
+      --ink: #0B0B0B;
+      --charcoal: #1A1A1A;
+      --slate: #4A4A4A;
+      --grey: #8A8A8A;
+      --silver: #B5B5B5;
+      --light: #E4E4E4;
+      --cream: #F2F2F2;
+      --paper: #FFFFFF;
       --white: #FFFFFF;
-      --accent: #B5654A;
-      --accent-soft: rgba(181, 101, 74, 0.08);
-      --accent-hover: #9C5038;
-      --teal: #3A342E;
+      --accent: #000000;
+      --accent-soft: rgba(0, 0, 0, 0.05);
+      --accent-hover: #333333;
+      --teal: #000000;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
       --mono: 'IBM Plex Mono', monospace;
@@ -116,7 +116,7 @@
 
     .nav-contact:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(181, 101, 74, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       color: var(--white) !important;
     }
 
@@ -513,7 +513,7 @@
       font-family: var(--mono);
       font-size: 0.68rem;
       padding: 0.3rem 0.8rem;
-      background: rgba(181, 101, 74, 0.06);
+      background: rgba(0, 0, 0, 0.06);
       color: var(--accent);
       border-radius: 20px;
     }
@@ -728,7 +728,7 @@
 
     .case-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(181, 101, 74, 0.12);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(0, 0, 0, 0.12);
     }
 
     .case-card::before {
@@ -750,7 +750,7 @@
       font-family: var(--serif);
       font-size: 4rem;
       font-weight: 700;
-      background: linear-gradient(135deg, rgba(181,101,74,0.06), rgba(181,101,74,0.06));
+      background: linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.06));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -825,7 +825,7 @@
       font-size: 0.58rem;
       letter-spacing: 0.04em;
       padding: 0.3rem 0.7rem;
-      background: rgba(181, 101, 74, 0.06);
+      background: rgba(0, 0, 0, 0.06);
       color: var(--accent);
       border-radius: 20px;
     }
@@ -843,15 +843,15 @@
       border-radius: 20px;
     }
 
-    .case-feature .case-industry { color: var(--accent); }
+    .case-feature .case-industry { color: rgba(255,255,255,0.75); }
     .case-feature .case-title { color: var(--white); font-size: 1.5rem; }
     .case-feature .case-company { color: var(--silver); }
     .case-feature .case-desc { color: rgba(255,255,255,0.7); }
     .case-feature .case-stat-value { color: var(--white); font-size: 2rem; }
     .case-feature .case-stat-label { color: rgba(255,255,255,0.4); }
-    .case-feature .case-tag { background: rgba(181, 101, 74, 0.12); color: var(--accent); }
-    .case-feature .case-number { background: linear-gradient(135deg, rgba(181,101,74,0.1), rgba(181,101,74,0.08)); -webkit-text-fill-color: transparent; }
-    .case-feature::before { background: var(--accent); }
+    .case-feature .case-tag { background: rgba(255,255,255,0.12); color: var(--white); }
+    .case-feature .case-number { background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.08)); -webkit-text-fill-color: transparent; }
+    .case-feature::before { background: var(--white); }
 
     /* Portfolio CTA inside cases */
     .portfolio-cta-inline {
@@ -867,7 +867,7 @@
     }
 
     .portfolio-cta-inline:hover {
-      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(181, 101, 74, 0.12);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.06), 0 0 0 1px rgba(0, 0, 0, 0.12);
       transform: translateY(-4px);
       text-decoration: none;
     }
@@ -947,7 +947,7 @@
     .social-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 16px 32px rgba(0,0,0,0.05);
-      border-color: rgba(181, 101, 74, 0.15);
+      border-color: rgba(0, 0, 0, 0.15);
     }
 
     .social-icon {
@@ -1050,9 +1050,9 @@
     }
 
     .contact-link:hover {
-      border-color: rgba(181, 101, 74, 0.3);
+      border-color: rgba(0, 0, 0, 0.3);
       color: var(--white);
-      background: rgba(181, 101, 74, 0.08);
+      background: rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
     }
 
