@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melina Giorgalletou, Social Media</title>
+  <meta name="description" content="Melina Giorgalletou: creator and social media manager. Selected campaigns, results and how I work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0B0B0B;
+      --slate: #4A4A4A;
+      --grey: #8A8A8A;
+      --light: #E4E4E4;
+      --cream: #F2F2F2;
+      --paper: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: var(--ink); }
+    ::selection { background: var(--ink); color: var(--paper); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--light); }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; gap: 16px; }
+    .logo { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; text-decoration: none; white-space: nowrap; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .nav-links a:hover { color: var(--ink); }
+    .btn { display: inline-block; background: var(--ink); color: var(--paper); padding: 12px 22px; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; font-weight: 500; }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    .btn:hover { opacity: 0.85; }
+
+    .hero { padding: 96px 0 72px; border-bottom: 1px solid var(--light); }
+    .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.05; letter-spacing: -0.02em; max-width: 14ch; }
+    h1 em { font-style: italic; }
+    .lede { font-size: 1.12rem; color: var(--slate); max-width: 60ch; margin: 28px 0 36px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 64px; border-top: 1px solid var(--ink); }
+    .stat { padding: 20px 16px 0 0; }
+    .stat b { display: block; font-family: var(--serif); font-size: 2.2rem; font-weight: 400; line-height: 1.1; }
+    .stat span { font-size: 0.82rem; color: var(--slate); }
+
+    section { padding: 88px 0; border-bottom: 1px solid var(--light); }
+    .sec-head { display: grid; grid-template-columns: 80px 1fr; gap: 24px; margin-bottom: 48px; }
+    .sec-num { font-family: var(--mono); font-size: 0.8rem; color: var(--grey); padding-top: 10px; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15; }
+    h2 em { font-style: italic; }
+    .sec-sub { color: var(--slate); margin-top: 12px; max-width: 62ch; }
+
+    .fit { border-top: 1px solid var(--ink); }
+    .fit-row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--light); }
+    .fit-row h3 { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; line-height: 1.35; }
+    .fit-row .ask { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); display: block; margin-bottom: 6px; }
+    .fit-row p { color: var(--slate); font-size: 0.96rem; }
+
+    .cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .case { border: 1px solid var(--light); padding: 32px; display: flex; flex-direction: column; }
+    .case-meta { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); }
+    .case h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.25; margin: 12px 0 14px; }
+    .case p { color: var(--slate); font-size: 0.95rem; }
+    .case ul { margin: 14px 0 0 18px; color: var(--slate); font-size: 0.93rem; }
+    .case li { margin-bottom: 6px; }
+    .nums { display: flex; gap: 28px; flex-wrap: wrap; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--light); }
+    .nums div b { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; display: block; line-height: 1.1; }
+    .nums div span { font-size: 0.76rem; color: var(--grey); }
+    .case .nums { margin-top: 24px; }
+    .relevance { margin-top: 18px; font-size: 0.88rem; padding: 12px 14px; background: var(--cream); color: var(--ink); }
+    .relevance b { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-right: 6px; }
+
+    .spec-note { font-family: var(--mono); font-size: 0.72rem; color: var(--grey); border: 1px dashed var(--grey); padding: 10px 14px; display: inline-block; margin-bottom: 28px; }
+    .voices { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .voice { border: 1px solid var(--ink); }
+    .voice-head { background: var(--ink); color: var(--paper); padding: 16px 22px; }
+    .voice-head b { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; }
+    .voice-head span { display: block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin-top: 2px; }
+    .post { padding: 20px 22px; border-bottom: 1px solid var(--light); }
+    .post:last-child { border-bottom: none; }
+    .post .plat { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+    .post p { font-size: 0.95rem; white-space: pre-line; }
+    .why { margin-top: 24px; color: var(--slate); font-size: 0.95rem; max-width: 70ch; }
+
+    .judge { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--ink); }
+    .judge > div { padding: 24px 20px 0 0; }
+    .judge h3 { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin-bottom: 6px; }
+    .judge .tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); }
+    .judge p { color: var(--slate); font-size: 0.92rem; margin-top: 8px; }
+
+    .plan { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .phase { border-top: 3px solid var(--ink); padding-top: 20px; }
+    .phase .days { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); }
+    .phase h3 { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; margin: 6px 0 14px; }
+    .phase ul { margin-left: 18px; color: var(--slate); font-size: 0.93rem; }
+    .phase li { margin-bottom: 8px; }
+
+    .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tools h3 { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); font-weight: 500; margin-bottom: 10px; }
+    .tools p { font-size: 0.95rem; }
+
+    .contact { text-align: center; border-bottom: none; padding: 104px 0; }
+    .contact h2 { max-width: 20ch; margin: 0 auto 20px; }
+    .contact p { color: var(--slate); max-width: 56ch; margin: 0 auto 32px; }
+    .contact .hero-actions { justify-content: center; }
+    footer { text-align: center; padding: 28px 0 40px; font-size: 0.78rem; color: var(--grey); border-top: 1px solid var(--light); }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .sec-head { grid-template-columns: 1fr; gap: 6px; }
+      .fit-row { grid-template-columns: 1fr; gap: 10px; }
+      .cases, .voices, .plan, .tools { grid-template-columns: 1fr; }
+      .judge { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 64px 0 56px; }
+      section { padding: 64px 0; }
+      .wrap { padding: 0 16px; }
+    }
+    @media (max-width: 480px) {
+      .judge { grid-template-columns: 1fr; }
+      .case { padding: 24px 20px; }
+    }
+  </style>
+  <style>
+    .cases .case:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="../" class="logo">Melina Giorgalletou</a>
+    <ul class="nav-links">
+      <li><a href="#bring">What I Bring</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#voices">Two Audiences</a></li>
+      <li><a href="#start">How I Start</a></li>
+    </ul>
+    <a href="mailto:melinageorgalletou@outlook.com" class="btn">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Creator &amp; Social Media Manager · Stockholm · Open to relocation</div>
+    <h1>Social that people <em>share</em>, built on data.</h1>
+    <p class="lede">I'm Melina, a social media and creator marketing manager with 4+ years across fintech, AI and beauty. I wrote for a regulated trading platform in six markets, built a 40+ creator program with a $130K+ quarterly budget at an AI startup, and now lead social and creator partnerships at Heyflow. Here's the work, the numbers, and how I think.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn">See the work</a>
+      <a href="../" class="btn ghost">Full portfolio</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>6</b><span>global markets managed in regulated fintech</span></div>
+      <div class="stat"><b>+35%</b><span>engagement across those markets</span></div>
+      <div class="stat"><b>$130K+</b><span>quarterly creator budget across 40+ creators</span></div>
+      <div class="stat"><b>5</b><span>platforms run day to day: X, LinkedIn, YouTube, IG, TikTok</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="bring">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div>
+        <h2>What I bring <em>to a social team</em></h2>
+        <p class="sec-sub">The things hiring managers ask for most, and where I've done each one.</p>
+      </div>
+    </div>
+    <div class="fit">
+      <div class="fit-row">
+        <h3><span class="ask">Brand voice</span>Writing for more than one audience</h3>
+        <p>At Supernormal I wrote for two audiences every week: B2B buyers on LinkedIn and creators and power users on TikTok and X. At IQ Option I adapted one global brand voice for six regional audiences across LATAM, Asia and the EU.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">Judgment</span>Posting in regulated, high-scrutiny spaces</h3>
+        <p>IQ Option is a trading platform, so every post went through compliance review. I worked inside that approval loop for two and a half years and learned what not to post before a market move.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">Video-first growth</span>Short-form video, end to end</h3>
+        <p>I concept, shoot and edit short-form video, motion graphics and animated content for TikTok, Reels and YouTube Shorts. At Heyflow I launched the brand's TikTok from zero. At Honestly Pure Beauty my Reels and UGC raised save and share rates 28%.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">Creator programs</span>Sourcing, briefing, paying and measuring creators</h3>
+        <p>I built Supernormal's creator program from scratch: sourcing, briefs, rate negotiation, CPM-based payouts and reporting across 40+ creators and a $130K+ quarterly budget. I also brief in-house design and run on-site shoots with the team.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">People on camera</span>Executive and team presence</h3>
+        <p>I've filmed and coached colleagues on camera and drafted the posts that went out under their names.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">Measurement</span>From reach to signups</h3>
+        <p>I build reporting that ties social and creator posts to conversions using GA4, PostHog and UTM attribution, including a live dashboard for leadership, and turn the numbers into next week's plan.</p>
+      </div>
+      <div class="fit-row">
+        <h3><span class="ask">AI workflows</span>Less copy and paste, more content</h3>
+        <p>I build my own tools with Claude and Claude Code for scraping post metrics, generating tracked links, automating reports and speeding up scripting and production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div>
+        <h2>Selected <em>campaigns</em></h2>
+        <p class="sec-sub">Five projects, the numbers behind them, and what each one shows.</p>
+      </div>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div class="case-meta">AI / Tech · Heyflow · 2026 to now</div>
+        <h3>Launching a brand on TikTok from zero</h3>
+        <p>Leading social across LinkedIn, TikTok, Instagram and YouTube for an AI company, with TikTok built from the first post.</p>
+        <ul>
+          <li>Produce short-form video, motion graphics and animated content end to end</li>
+          <li>Run creator partnerships from sourcing through performance tracking</li>
+          <li>Build KPI reporting that turns data into recommendations</li>
+        </ul>
+        <div class="relevance"><b>Shows</b>Building a channel from nothing and owning the full production loop.</div>
+      </article>
+      <article class="case">
+        <div class="case-meta">AI / Tech · Supernormal · 2025 to 2026</div>
+        <h3>A creator program built from scratch</h3>
+        <p>Designed the program end to end: creator sourcing on TikTok, Instagram, YouTube and LinkedIn, briefs, contracts, CPM-based payouts, UTM tracking and weekly performance reporting.</p>
+        <ul>
+          <li>Ran culture-moment briefs that let creators react to trends on the same day</li>
+          <li>Tied creator posts to signups instead of stopping at views</li>
+        </ul>
+        <div class="nums">
+          <div><b>40+</b><span>creators</span></div>
+          <div><b>$130K+</b><span>quarterly budget</span></div>
+        </div>
+        <div class="relevance"><b>Shows</b>Running creator marketing as a measurable, budgeted channel.</div>
+      </article>
+      <article class="case">
+        <div class="case-meta">Fintech · IQ Option · 2022 to 2025</div>
+        <h3>Global social across six markets, under compliance review</h3>
+        <p>Owned content strategy and channel management for a trading platform's audiences in LATAM, Asia and the EU, adapting each campaign to local culture and platform norms.</p>
+        <ul>
+          <li>Planned paid and organic social on Meta and TikTok</li>
+          <li>Published 20+ posts and stories a week</li>
+        </ul>
+        <div class="nums">
+          <div><b>+35%</b><span>engagement</span></div>
+          <div><b>−18%</b><span>cost per lead</span></div>
+          <div><b>+27%</b><span>engagement on AI visuals</span></div>
+        </div>
+        <div class="relevance"><b>Shows</b>Speed and accuracy for a global audience in a regulated industry.</div>
+      </article>
+      <article class="case">
+        <div class="case-meta">AI / Tech · Supernormal · 2025 to 2026</div>
+        <h3>Launches, community and live events</h3>
+        <p>Turned product releases into multi-platform campaigns, and planned in-person community events for agency leaders in Stockholm, plus a co-branded AI event with Build Club in London.</p>
+        <ul>
+          <li>Coordinated launch content across five channels</li>
+          <li>Handled invites, vendors and on-site content capture</li>
+        </ul>
+        <div class="nums">
+          <div><b>25+</b><span>agency leaders hosted</span></div>
+          <div><b>2</b><span>cities</span></div>
+        </div>
+        <div class="relevance"><b>Shows</b>Connecting social, launches and real-world community.</div>
+      </article>
+      <article class="case">
+        <div class="case-meta">Beauty · Honestly Pure Beauty · 2025</div>
+        <h3>Premium brand content that people saved and shared</h3>
+        <p>Led art direction and production for a Nordic beauty brand: Reels, UGC, product visuals and motion assets, plus a UGC creator network from brief to final edit.</p>
+        <ul>
+          <li>20+ organic and paid assets a month</li>
+          <li>Weekly creative reports on CTR, CPC and engagement rate</li>
+        </ul>
+        <div class="nums">
+          <div><b>+28%</b><span>save and share rate</span></div>
+          <div><b>+22%</b><span>link clicks, month over month</span></div>
+        </div>
+        <div class="relevance"><b>Shows</b>Strong visual instincts and content built to be saved and shared.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div>
+        <h2>One announcement, <em>two audiences</em></h2>
+        <p class="sec-sub">How I'd write the same launch for decision-makers and for a community.</p>
+      </div>
+    </div>
+    <div class="spec-note">Sample written for this portfolio. Placeholder product and news.</div>
+    <div class="voices">
+      <div class="voice">
+        <div class="voice-head"><b>Business audience</b><span>Buyers · leadership · partners</span></div>
+        <div class="post">
+          <div class="plat">LinkedIn</div>
+          <p>Teams lose hours every week rebuilding the same reports.
+
+Today [Product] launches [Feature], which turns your raw data into a shareable report in one click.
+
+Here's what early customers saved in their first month 👇</p>
+        </div>
+        <div class="post">
+          <div class="plat">X</div>
+          <p>New in [Product]: [Feature].
+
+Raw data in, shareable report out. One click.
+
+Live for all plans today: [link]</p>
+        </div>
+      </div>
+      <div class="voice">
+        <div class="voice-head"><b>Community</b><span>Users · creators · fans</span></div>
+        <div class="post">
+          <div class="plat">X</div>
+          <p>you asked, we shipped 👀
+
+[Feature] is live. one click, done.
+
+what should we build next? 👇</p>
+        </div>
+        <div class="post">
+          <div class="plat">TikTok · 20s concept</div>
+          <p>Hook (0–2s): "POV: it's Friday at 4:55 and your boss wants the report."
+Split screen: the old way vs. one click in [Product].
+Close on the finished report. Caption sends people to try it free.</p>
+        </div>
+      </div>
+    </div>
+    <p class="why">Same facts, same approval path. The business version leads with the outcome and stays measured. The community version speaks the audience's own language and invites replies. One calendar and one review keep the voices distinct and the facts aligned.</p>
+  </div>
+</section>
+
+<section id="judgment">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div>
+        <h2>Real-time moments: <em>respond, amplify or escalate</em></h2>
+        <p class="sec-sub">The framework I use when the timeline moves faster than the calendar.</p>
+      </div>
+    </div>
+    <div class="judge">
+      <div>
+        <span class="tag">Green</span>
+        <h3>Respond</h3>
+        <p>Product questions, praise and confusion we can answer from published material. Reply within the hour, link the source.</p>
+      </div>
+      <div>
+        <span class="tag">Green</span>
+        <h3>Amplify</h3>
+        <p>Partner posts, customer wins and accurate community explainers. Quote, credit and thank people by name.</p>
+      </div>
+      <div>
+        <span class="tag">Amber</span>
+        <h3>Hold</h3>
+        <p>Rumors, pricing speculation and heated threads. Stay quiet, monitor sentiment and log it for Comms.</p>
+      </div>
+      <div>
+        <span class="tag">Red</span>
+        <h3>Escalate</h3>
+        <p>Legal or regulatory news, security claims, executive mentions. Pause scheduled posts, alert Comms and Legal, and publish only approved copy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div>
+        <h2>How I start <em>in a new role</em></h2>
+        <p class="sec-sub">My first 90 days, adapted to each team in week one.</p>
+      </div>
+    </div>
+    <div class="plan">
+      <div class="phase">
+        <div class="days">Days 1–30</div>
+        <h3>Listen and audit</h3>
+        <ul>
+          <li>Audit every channel: content mix, cadence, engagement, sentiment</li>
+          <li>Map the approval path and agree fast-track rules for reactive posts</li>
+          <li>Write a one-page voice guide for each audience</li>
+          <li>Set up social listening for the brand, leaders and key topics</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="days">Days 31–60</div>
+        <h3>Build the engine</h3>
+        <ul>
+          <li>Launch a shared editorial calendar tied to product and event dates</li>
+          <li>Stand up a creative pipeline with design, video and creators</li>
+          <li>Start a weekly report: reach, engagement, share of voice, conversions</li>
+          <li>Test two new formats per platform</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="days">Days 61–90</div>
+        <h3>Scale what works</h3>
+        <ul>
+          <li>Run the first multi-week campaign around a major launch</li>
+          <li>Pilot a creator or community series</li>
+          <li>Build a drafting and coaching rhythm for leaders' accounts</li>
+          <li>Present a quarterly read-out with next quarter's bets</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div><h2>Tools <em>I work in</em></h2></div>
+    </div>
+    <div class="tools">
+      <div>
+        <h3>Publishing &amp; workflow</h3>
+        <p>Asana, Google Workspace, Slack, Notion, Later, Hootsuite, Meta Business Suite</p>
+      </div>
+      <div>
+        <h3>Analytics &amp; listening</h3>
+        <p>GA4, PostHog, Looker Studio, Klear, SEMrush, UTM attribution</p>
+      </div>
+      <div>
+        <h3>Creative &amp; AI</h3>
+        <p>Premiere Pro, After Effects, CapCut, Final Cut Pro, Figma, Canva, Claude, Claude Code, ChatGPT, Midjourney</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Let's <em>work together</em></h2>
+    <p>I'm based in Stockholm and open to relocating. I'd love to walk you through any of this work.</p>
+    <div class="hero-actions">
+      <a href="mailto:melinageorgalletou@outlook.com" class="btn">Email me</a>
+      <a href="https://www.linkedin.com/in/melina-giorgalletou/" class="btn ghost">LinkedIn</a>
+      <a href="../" class="btn ghost">Full portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>Melina Giorgalletou · Stockholm · 2026</footer>
+
+</body>
+</html>
