@@ -57,25 +57,25 @@
     .stat span { display: block; margin-top: 10px; font-size: 0.84rem; color: var(--body); max-width: 22ch; }
 
     section { padding: 104px 0; }
+    .intro { padding: 56px 0 8px; }
+    .intro p { margin-top: 12px; font-size: 1.05rem; color: var(--body); max-width: 60ch; }
+    #campaigns { padding: 28px 0 96px; }
+    .what { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 24px; display: block; }
+    .case.dark .what { color: rgba(255,255,255,0.5); }
     .head { margin-bottom: 40px; }
     .head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.08; letter-spacing: -0.015em; margin-top: 14px; }
     .head h2 em { font-style: italic; }
     .head p { color: var(--body); margin-top: 12px; max-width: 60ch; }
     .tint { background: var(--wash); }
 
-    /* filters */
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .filters button { font-size: 0.82rem; padding: 9px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); transition: background .25s, color .25s, box-shadow .25s; }
-    .filters button:hover { box-shadow: inset 0 0 0 1px var(--ink); }
-    .filters button.on { background: var(--ink); color: var(--paper); box-shadow: none; }
 
     /* cases */
     .cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .case { background: var(--wash); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; transition: transform .35s var(--ease), box-shadow .35s, opacity .35s; }
+    .case { background: var(--wash); border: 1px solid var(--line); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; transition: transform .35s var(--ease), box-shadow .35s, opacity .35s; }
     .case:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.07); }
-    .tint .case { background: var(--paper); }
-    .tint .case.dark { background: var(--ink); }
-    .case.dark { background: var(--ink); color: var(--paper); }
+    .case { background: var(--paper); }
+    .case.dark { background: var(--ink); }
+    .case.dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
     .case.dark .label, .case.dark p, .case.dark li { color: rgba(255,255,255,0.68); }
     .case.hide { display: none; }
     .case.pop { animation: pop .45s var(--ease); }
@@ -93,8 +93,8 @@
     .more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
     .more > div { overflow: hidden; }
     .case.open .more { grid-template-rows: 1fr; }
-    .more ul { margin: 18px 0 0 18px; font-size: 0.92rem; color: var(--body); }
-    .more li { margin-bottom: 6px; }
+    .case ul { margin: 10px 0 0 18px; font-size: 0.92rem; color: var(--body); }
+    .case li { margin-bottom: 6px; }
     .shows { margin-top: 14px; font-size: 0.88rem; padding: 12px 14px; border-radius: 12px; background: rgba(0,0,0,0.04); }
     .case.dark .shows { background: rgba(255,255,255,0.08); }
     .shows b { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-right: 6px; }
@@ -152,9 +152,9 @@
     .tool-group { margin-bottom: 26px; }
     .tool-group .label { display: block; margin-bottom: 12px; }
 
-    .contact { background: var(--ink); color: var(--paper); text-align: center; padding: 120px 0; }
+    .contact { background: var(--ink); color: var(--paper); text-align: center; padding: 88px 0; }
     .contact .label { color: rgba(255,255,255,0.5); }
-    .contact h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.05; margin: 18px auto 22px; max-width: 16ch; }
+    .contact h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.08; margin: 16px auto 18px; max-width: 18ch; }
     .contact h2 em { font-style: italic; }
     .contact p { color: rgba(255,255,255,0.7); max-width: 50ch; margin: 0 auto 34px; }
     .contact .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -204,56 +204,28 @@
   </div>
 </nav>
 
-<header class="hero">
+<header class="intro">
   <div class="wrap">
     <div class="label">Portfolio</div>
-    <h1>The work behind the <em>numbers</em></h1>
-    <p>Creator programs, campaigns and the systems behind them. Filter by type and tap a project to see what I did.</p>
+    <p>Six projects across creator marketing, paid and organic social, community and AI systems.</p>
   </div>
 </header>
 
-<section id="campaigns" class="tint" style="padding-top:56px">
+<section id="campaigns">
   <div class="wrap">
-    <div class="filters" role="toolbar" aria-label="Filter projects">
-      <button class="on" data-f="all">All</button>
-      <button data-f="creator">Creator programs</button>
-      <button data-f="paid">Paid &amp; performance</button>
-      <button data-f="content">Content &amp; brand</button>
-      <button data-f="community">Community &amp; events</button>
-      <button data-f="ai">AI &amp; systems</button>
-    </div>
     <div class="cases">
       <article class="case dark" data-t="creator paid">
         <div class="label">Supernormal · AI / Tech · 2025–2026</div>
         <h3>An influencer program built from zero</h3>
         <p>Designed the whole program: creator sourcing on TikTok, Instagram, YouTube and LinkedIn, briefs, negotiation, performance-based payouts and weekly reporting.</p>
         <div class="nums"><div><b data-to="40" data-suf="+">40+</b><span>creators</span></div><div><b data-to="130" data-pre="$" data-suf="K+">$130K+</b><span>quarterly budget</span></div></div>
-        <div class="more"><div>
+        <span class="what">What I did</span>
           <ul>
             <li>Paid creators a flat fee plus a per-view bonus, so spend followed performance</li>
             <li>Ran culture-moment briefs that let creators react to trends on the same day</li>
-            <li>Tied creator posts to signups with UTM tracking instead of stopping at views</li>
+            <li>Tied every creator post to signups with UTM tracking</li>
           </ul>
-          <div class="shows"><b>Shows</b>Running creator marketing as a measurable, budgeted channel.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I did</button>
         <div class="tags"><span>Influencer marketing</span><span>CPM payouts</span><span>Creator ops</span></div>
-      </article>
-
-      <article class="case" data-t="creator paid content">
-        <div class="label">Heyflow · AI / Tech · 2026–now</div>
-        <h3>A second creator program, from scratch</h3>
-        <p>Building Heyflow's creator program and leading social strategy across LinkedIn, TikTok, Instagram and YouTube for an AI company.</p>
-        <div class="more"><div>
-          <ul>
-            <li>Source and brief creators, and track their performance</li>
-            <li>Create content for paid ads alongside organic short-form video, motion graphics and animation</li>
-            <li>Build KPI reporting that turns into recommendations for the team</li>
-          </ul>
-          <div class="shows"><b>Shows</b>Building a creator program twice, and making creative that works for both paid and organic.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I do</button>
-        <div class="tags"><span>Creator program</span><span>Paid ad creative</span><span>Social strategy</span></div>
       </article>
 
       <article class="case" data-t="paid content">
@@ -261,16 +233,26 @@
         <h3>Global social across six markets, under compliance review</h3>
         <p>Content strategy and paid social for a trading platform's audiences in LATAM, Asia and the EU.</p>
         <div class="nums"><div><b data-to="35" data-pre="+" data-suf="%">+35%</b><span>engagement</span></div><div><b data-to="18" data-pre="−" data-suf="%">−18%</b><span>cost per lead</span></div><div><b data-to="27" data-pre="+" data-suf="%">+27%</b><span>AI visuals vs. standard</span></div></div>
-        <div class="more"><div>
+        <span class="what">What I did</span>
           <ul>
-            <li>Every post went through compliance review, so speed never came at the cost of accuracy</li>
+            <li>Worked within compliance review on every post, balancing speed with accuracy</li>
             <li>Planned paid and organic social on Meta and TikTok, publishing 20+ posts and stories a week</li>
             <li>Grew from assistant to specialist, coordinating influencer collaborations along the way</li>
           </ul>
-          <div class="shows"><b>Shows</b>Judgment in a regulated industry, at global scale.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I did</button>
         <div class="tags"><span>Paid social</span><span>Localization</span><span>Compliance</span></div>
+      </article>
+
+      <article class="case" data-t="creator paid content">
+        <div class="label">Heyflow · AI / Tech · 2026–now</div>
+        <h3>A second creator program, from scratch</h3>
+        <p>Building Heyflow's creator program and leading social strategy across LinkedIn, TikTok, Instagram and YouTube for an AI company.</p>
+        <span class="what">What I do</span>
+          <ul>
+            <li>Source and brief creators, and track their performance</li>
+            <li>Create content for paid ads alongside organic short-form video, motion graphics and animation</li>
+            <li>Build KPI reporting that turns into recommendations for the team</li>
+          </ul>
+        <div class="tags"><span>Creator program</span><span>Paid ad creative</span><span>Social strategy</span></div>
       </article>
 
       <article class="case" data-t="content">
@@ -278,15 +260,12 @@
         <h3>Brand content people saved and shared</h3>
         <p>Art direction and end-to-end production for a premium Nordic beauty brand: Reels, UGC, product visuals and motion.</p>
         <div class="nums"><div><b data-to="28" data-pre="+" data-suf="%">+28%</b><span>save and share rate</span></div><div><b data-to="22" data-pre="+" data-suf="%">+22%</b><span>link clicks, month over month</span></div></div>
-        <div class="more"><div>
+        <span class="what">What I did</span>
           <ul>
             <li>Produced 20+ organic and paid assets a month</li>
             <li>Ran a UGC creator network from brief to final edit</li>
             <li>Presented weekly creative reports on CTR, CPC and engagement rate</li>
           </ul>
-          <div class="shows"><b>Shows</b>A strong visual eye and content built to be saved and shared.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I did</button>
         <div class="tags"><span>Art direction</span><span>UGC</span><span>Reels</span></div>
       </article>
 
@@ -295,15 +274,12 @@
         <h3>Community events in Stockholm and London</h3>
         <p>Turned launches into real-world moments with in-person events for agency leaders in Stockholm, plus a co-branded AI event with Build Club in London.</p>
         <div class="nums"><div><b data-to="25" data-suf="+">25+</b><span>agency leaders hosted</span></div><div><b data-to="2">2</b><span>cities</span></div></div>
-        <div class="more"><div>
+        <span class="what">What I did</span>
           <ul>
             <li>Built the guest list from scratch, with LinkedIn ads and email and DM outreach driving RSVPs</li>
             <li>Handled invites, vendors and on-site content capture</li>
             <li>Planned the London event with a partner brand</li>
           </ul>
-          <div class="shows"><b>Shows</b>Connecting social, launches and real-world community.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I did</button>
         <div class="tags"><span>Events</span><span>Partnerships</span><span>Community</span></div>
       </article>
 
@@ -311,15 +287,12 @@
         <div class="label">Supernormal · Systems · 2025–2026</div>
         <h3>AI-powered marketing operations</h3>
         <p>Built my own tools with Claude Code so a small team could run a big creator program without manual copy and paste.</p>
-        <div class="more"><div>
+        <span class="what">What I built</span>
           <ul>
             <li>A live creator dashboard for leadership</li>
             <li>Social scrapers that pull post metrics automatically, plus a weekly creator ranking</li>
             <li>Tracked-link generators and automated weekly reporting</li>
           </ul>
-          <div class="shows"><b>Shows</b>Building systems that make the work scale.</div>
-        </div></div>
-        <button class="toggle" aria-expanded="false"><span class="pl">+</span> What I built</button>
         <div class="tags"><span>Claude Code</span><span>Dashboards</span><span>Automation</span></div>
       </article>
     </div>
@@ -361,23 +334,7 @@
   }), { threshold: 0.2 });
   document.querySelectorAll('.fade, .case .nums b').forEach(el => io.observe(el));
 
-  // filters
-  const cases = [...document.querySelectorAll('.case')];
-  document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.filters button').forEach(x => x.classList.toggle('on', x === b));
-    const f = b.dataset.f;
-    cases.forEach(c => {
-      const show = f === 'all' || c.dataset.t.split(' ').includes(f);
-      c.classList.toggle('hide', !show);
-      if (show) { c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop'); }
-    });
-  }));
 
-  // expand cards
-  document.querySelectorAll('.case .toggle').forEach(t => t.addEventListener('click', () => {
-    const c = t.closest('.case'); const open = c.classList.toggle('open');
-    t.setAttribute('aria-expanded', open);
-  }));
 
 })();
 </script>
