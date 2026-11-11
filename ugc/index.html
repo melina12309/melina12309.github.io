@@ -57,8 +57,9 @@
   .rot { display: inline-block; position: relative; font-style: italic; white-space: nowrap; }
   .rot span { display: inline-block; animation: up .5s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes up { from { opacity: 0; transform: translateY(.35em); } to { opacity: 1; transform: none; } }
-  .arch { position: relative; aspect-ratio: 4 / 5.2; max-width: 400px; justify-self: end; width: 100%; }
-  .arch .frame { position: absolute; inset: 0; border-radius: 999px 999px 18px 18px; overflow: hidden; background: var(--wash); }
+  .arch { position: relative; aspect-ratio: 9 / 15; max-width: 340px; justify-self: end; width: 100%; }
+  .arch::before { content: ""; position: absolute; inset: 0; border-radius: 28px; background: var(--wash); box-shadow: inset 0 0 0 1px var(--line); transform: rotate(6deg) translate(18px, 6px); }
+  .arch .frame { position: absolute; inset: 0; border-radius: 28px; overflow: hidden; background: var(--wash); transform: rotate(-2deg); box-shadow: 0 30px 60px -30px rgba(0,0,0,.45); }
   .arch video, .arch img.cut { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .arch video { transition: opacity .6s; }
   .chip-rec { position: absolute; left: -22px; bottom: 34px; background: var(--paper); border-radius: 12px; box-shadow: 0 12px 30px -12px rgba(0,0,0,.35); padding: 12px 16px; font-size: .85rem; display: flex; align-items: center; gap: 10px; z-index: 2; }
@@ -67,7 +68,7 @@
   .chip-rec b { font-weight: 500; }
   .chip-rec small { color: var(--muted); font-family: var(--mono); font-size: .68rem; margin-left: 4px; }
   .sticker { position: absolute; right: -14px; top: 22px; z-index: 2; background: var(--ink); color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 1.05rem; padding: 10px 16px; border-radius: 999px; transform: rotate(8deg); box-shadow: 0 10px 24px -10px rgba(0,0,0,.4); }
-  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } .arch { justify-self: center; max-width: 320px; } .chip-rec { left: -8px; } .sticker { right: -6px; } }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } .arch { justify-self: center; max-width: 280px; } .chip-rec { left: -8px; } .sticker { right: -6px; } }
 
   /* stats strip */
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1px solid var(--ink); padding-top: 28px; margin-top: 64px; }
@@ -158,6 +159,18 @@
   .contact p { color: var(--body); max-width: 46ch; margin: 0 auto; }
   .contact .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
   .copied { font-size: .8rem; color: var(--muted); margin-top: 12px; min-height: 1.4em; }
+  .cform { max-width: 620px; margin: 40px auto 0; text-align: left; background: var(--wash); border-radius: 24px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cform .full { grid-column: 1 / -1; }
+  .cform label { display: grid; gap: 6px; font-size: .78rem; font-weight: 500; color: var(--body); }
+  .cform input, .cform select, .cform textarea { font: inherit; font-size: .95rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; width: 100%; }
+  .cform input:focus, .cform select:focus, .cform textarea:focus { outline: none; border-color: var(--ink); }
+  .cform textarea { min-height: 120px; resize: vertical; }
+  .cform .send { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .cform .status { font-size: .85rem; color: var(--body); }
+  .cform .hp { position: absolute; left: -9999px; }
+  .alt { margin-top: 22px; font-size: .85rem; color: var(--muted); }
+  .alt button, .alt a { text-decoration: underline; text-underline-offset: 3px; color: var(--body); }
+  @media (max-width: 600px) { .cform { grid-template-columns: 1fr; padding: 22px; } }
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: .8rem; color: var(--muted); }
   footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
@@ -275,11 +288,16 @@
     <div class="label">Work with me</div>
     <h2>Got a product that needs a <em>face?</em></h2>
     <p>Tell me what you're launching and where it'll run. I'll come back with three hook ideas before we talk price.</p>
-    <div class="ctas">
-      <a class="btn" href="mailto:melinageorgalletou@outlook.com?subject=UGC%20video">Email me</a>
-      <button class="btn ghost" type="button" id="copyEmail">Copy email address</button>
-      <a class="btn ghost" href="https://www.linkedin.com/in/melina-giorgalletou/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
+    <form class="cform" id="cform" novalidate>
+      <label>Your name<input id="f-name" name="name" required autocomplete="name"></label>
+      <label>Work email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <label>Brand or company<input id="f-brand" name="brand" autocomplete="organization"></label>
+      <label>What you need<select id="f-type" name="type"><option>Not sure yet</option><option>Talking-head explainer</option><option>Product demo</option><option>Tutorial</option><option>Skit or trend</option><option>Hooks and scripts only</option></select></label>
+      <label class="full">What are you launching, and where will it run?<textarea id="f-msg" name="message" required></textarea></label>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="send full"><span class="status" id="f-status" role="status"></span><button class="btn" type="submit" id="f-send">Send message</button></div>
+    </form>
+    <p class="alt">Prefer email? <button type="button" id="copyEmail">Copy my address</button> · <a href="https://www.linkedin.com/in/melina-giorgalletou/" target="_blank" rel="noopener">LinkedIn</a></p>
     <div class="copied" id="copied"></div>
   </div>
 </section>
@@ -400,6 +418,22 @@
   $('#pStage').addEventListener('touchstart', (e) => { y0 = e.touches[0].clientY; }, { passive: true });
   $('#pStage').addEventListener('touchend', (e) => { if (y0 == null) return; const dy = e.changedTouches[0].clientY - y0; if (Math.abs(dy) > 60) step(dy < 0 ? 1 : -1); y0 = null; });
 
+  // contact form, delivered by formsubmit.co to Melina's inbox
+  $('#cform').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = e.target, st = $('#f-status'), btn = $('#f-send');
+    if (!f.name.value.trim() || !f.email.value.includes('@') || !f.message.value.trim()) { st.textContent = 'Add your name, email and a short message, then send.'; return; }
+    btn.disabled = true; st.textContent = 'Sending…';
+    const body = { name: f.name.value, email: f.email.value, brand: f.brand.value, type: f.type.value, message: f.message.value, _honey: f._honey.value, _subject: 'UGC enquiry from ' + f.name.value, _template: 'table', _captcha: 'false' };
+    try {
+      const r = await fetch('https://formsubmit.co/ajax/melinageorgalletou@outlook.com', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message || 'failed');
+      f.reset(); st.textContent = "Thanks! It's in my inbox and I'll reply within two working days.";
+    } catch (err) {
+      st.textContent = "That didn't go through. Copy my email address below and write to me directly.";
+    } finally { btn.disabled = false; }
+  });
   // contact
   $('#copyEmail').addEventListener('click', () => { const t = 'melinageorgalletou@outlook.com'; navigator.clipboard?.writeText(t).then(() => { $('#copied').textContent = 'Copied ' + t; }, () => { $('#copied').textContent = t; }); });
 })();
