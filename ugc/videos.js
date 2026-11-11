@@ -870,7 +870,7 @@ window.UGC = [
   "platform": "instagram",
   "url": "https://www.instagram.com/p/DejjNvtNNqZ/",
   "brand": "Heyflow",
-  "format": "skit",
+  "format": "explainer",
   "hook": "I blurred the logos on 5 DTC ads. Can you guess the brand?",
   "about": "Blur the logo on your own ad. Could anyone still tell it's you?",
   "views": 0,
