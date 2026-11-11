@@ -210,7 +210,7 @@
       <div>
         <div class="label">UGC creator · Stockholm · English, Greek, Italian, Swedish</div>
         <h1>Hi, I'm <em>Melina.</em><br>I make videos that <span class="rot" id="rot"><span>explain.</span></span></h1>
-        <p class="sub">Talking heads, product demos, skits and tutorials for tech and marketing brands.</p>
+        <p class="sub">Talking heads, product demos, tutorials, street interviews and skits for tech and marketing brands.</p>
         <p class="lede">I write the hook, film it and edit it. Everything on this page is real work, from brand accounts and my own.</p>
         <div class="ctas">
           <button class="btn" type="button" id="surpriseTop">Play a random one <span aria-hidden="true">🎲</span></button>
@@ -263,6 +263,7 @@
         <li><div class="row"><b>Talking-head explainer</b><span class="dots"></span><span class="p">On request</span></div><p>Turn news, a launch or a complicated idea into 60 seconds people follow.</p></li>
         <li><div class="row"><b>Product demo</b><span class="dots"></span><span class="p">On request</span></div><p>Screen recording plus me on camera, showing the one feature that matters.</p></li>
         <li><div class="row"><b>Skit or trend</b><span class="dots"></span><span class="p">On request</span></div><p>Office humor and trending formats that fit your brand.</p></li>
+        <li><div class="row"><b>Street interview</b><span class="dots"></span><span class="p">On request</span></div><p>Stopping strangers in Stockholm with a mic and one good question.</p></li>
         <li><div class="row"><b>Tutorial</b><span class="dots"></span><span class="p">On request</span></div><p>Step-by-step videos people save, like the funnel and lead-form series.</p></li>
         <li><div class="row"><b>Hooks and scripts only</b><span class="dots"></span><span class="p">On request</span></div><p>Ten opening lines and a script your own creators can film.</p></li>
       </ul>
@@ -303,7 +304,7 @@
   const src = (v) => 'media/' + v.id + '.mp4', poster = (v) => 'media/' + v.id + '.jpg';
   const k = (n) => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'k' : String(n);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const FORMATS = { explainer: 'Explainers', demo: 'Product demos', skit: 'Skits & trends', tutorial: 'Tutorials', offduty: 'Off duty' };
+  const FORMATS = { explainer: 'Explainers', demo: 'Product demos', tutorial: 'Tutorials', screen: 'Screen & voiceover', skit: 'Skits & trends', interview: 'Street interviews', offduty: 'Off duty' };
 
   // stats + brands
   const views = V.reduce((a, v) => a + (v.views || 0), 0), likes = V.reduce((a, v) => a + (v.likes || 0), 0);
