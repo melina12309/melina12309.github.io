@@ -54,7 +54,7 @@
   .hero .sub { font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.75rem); color: var(--body); line-height: 1.3; }
   .hero p.lede { margin-top: 22px; color: var(--body); max-width: 52ch; font-size: 1.04rem; }
   .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-  .rot { display: inline-block; position: relative; font-style: italic; }
+  .rot { display: inline-block; position: relative; font-style: italic; white-space: nowrap; }
   .rot span { display: inline-block; animation: up .5s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes up { from { opacity: 0; transform: translateY(.35em); } to { opacity: 1; transform: none; } }
   .arch { position: relative; aspect-ratio: 4 / 5.2; max-width: 400px; justify-self: end; width: 100%; }
@@ -208,7 +208,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="label">UGC creator · Stockholm · English, Greek, Italian, Swedish</div>
+        <div class="label">UGC creator · Stockholm · English &amp; Greek</div>
         <h1>Hi, I'm <em>Melina.</em><br>I make videos that <span class="rot" id="rot"><span>explain.</span></span></h1>
         <p class="sub">Talking heads, product demos, tutorials, street interviews and skits for tech and marketing brands.</p>
         <p class="lede">I write the hook, film it and edit it. Everything on this page is real work, from brand accounts and my own.</p>
@@ -257,7 +257,7 @@
         <div class="label">Services</div>
         <h2>What I <em>make.</em></h2>
         <p class="intro">Every video comes with the hook, script and edit. Raw footage and captions on request. Rates depend on usage rights and how many videos you need.</p>
-        <div class="langs"><span>English</span><span>Greek</span><span>Italian</span><span>Swedish</span></div>
+        <div class="langs"><span>English</span><span>Greek</span></div>
       </div>
       <ul>
         <li><div class="row"><b>Talking-head explainer</b><span class="dots"></span><span class="p">On request</span></div><p>Turn news, a launch or a complicated idea into 60 seconds people follow.</p></li>
@@ -308,13 +308,13 @@
 
   // stats + brands
   const views = V.reduce((a, v) => a + (v.views || 0), 0), likes = V.reduce((a, v) => a + (v.likes || 0), 0);
-  $('#stats').innerHTML = [[V.length, 'videos on camera'], [k(views), 'TikTok views across them'], [new Set(V.map((v) => v.brand)).size, 'brands and accounts'], ['4', 'languages I can film in']]
+  $('#stats').innerHTML = [[V.length, 'videos made for brands and my own accounts'], [new Set(V.map((v) => v.format)).size, 'formats, from explainers to street interviews'], [new Set(V.map((v) => v.brand)).size, 'brands and accounts'], [V.filter((v) => v.hookPick).length, 'hooks you can try below']]
     .map(([n, t]) => `<div class="stat"><div class="n">${n}</div><div class="k">${t}</div></div>`).join('');
   const brands = {}; V.forEach((v) => { brands[v.brand] = (brands[v.brand] || 0) + 1; });
-  $('#brands').innerHTML += Object.entries(brands).filter(([b]) => b !== 'Personal').sort((a, b) => b[1] - a[1]).map(([b, n]) => `<span class="b">${esc(b)}<small>${b === 'FunMels Funnels' ? 'my own brand · ' : ''}${n} videos</small></span>`).join('');
+  $('#brands').innerHTML += Object.entries(brands).filter(([b]) => b !== 'Personal').sort((a, b) => b[1] - a[1]).map(([b, n]) => `<span class="b">${esc(b)}<small>${n} videos</small></span>`).join('');
 
   // rotating verb
-  const verbs = ['explain.', 'demo.', 'make people laugh.', 'get saved.', 'sell, quietly.'];
+  const verbs = ['explain.', 'convert.', 'get laughs.', 'get saved.', 'sell.'];
   let vi = 0;
   if (!reduced) setInterval(() => { vi = (vi + 1) % verbs.length; $('#rot').innerHTML = `<span>${verbs[vi]}</span>`; }, 2200);
 
@@ -359,7 +359,7 @@
   $('#wallGrid').innerHTML = ordered.map((v) => `<button type="button" class="card" data-id="${v.id}" data-f="${v.format}" aria-label="Play: ${esc(v.hook)}">
       <img src="${poster(v)}" alt="" loading="lazy"><video muted playsinline loop preload="none"></video><span class="shade"></span>
       <span class="tag">${esc(FORMATS[v.format].replace(/s$/, '').replace('Skits & trend', 'Skit'))}</span><span class="dur">${v.dur ? Math.floor(v.dur / 60) + ':' + String(v.dur % 60).padStart(2, '0') : ''}</span>
-      <span class="info"><span class="t">${esc(v.hook)}</span><span class="m">${esc(v.brand)} · ${v.views ? k(v.views) + ' views' : k(v.likes || 0) + ' likes'}</span></span></button>`).join('');
+      <span class="info"><span class="t">${esc(v.hook)}</span><span class="m">${esc(v.brand)}</span></span></button>`).join('');
   $('#filters').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.id === 'surprise') return random();
@@ -384,8 +384,8 @@
     const v = list[idx]; pv.poster = poster(v); pv.src = src(v); pv.muted = false; pv.play().catch(() => {});
     $('#pCount').textContent = `${idx + 1} / ${list.length}`;
     const meta = `<div class="label">${esc(v.brand)} · ${esc(FORMATS[v.format])}</div>`;
-    $('#pSide').innerHTML = `${meta}<h3>${esc(v.hook)}</h3><p>${esc(v.about || '')}</p><div class="nums">${v.views ? `<span>${k(v.views)}<small>views</small></span>` : ''}<span>${k(v.likes || 0)}<small>likes</small></span>${v.dur ? `<span>${v.dur}s<small>length</small></span>` : ''}</div><a href="${esc(v.url)}" target="_blank" rel="noopener">See it on ${v.platform === 'instagram' ? 'Instagram' : 'TikTok'} ↗</a>`;
-    $('#pMob').innerHTML = `<b>${esc(v.hook)}</b>${esc(v.brand)} · ${v.views ? k(v.views) + ' views' : k(v.likes || 0) + ' likes'}<div class="hint">swipe up for the next one</div>`;
+    $('#pSide').innerHTML = `${meta}<h3>${esc(v.hook)}</h3><p>${esc(v.about || '')}</p><div class="nums">${v.dur ? `<span>${v.dur}s<small>length</small></span>` : ''}<span>${v.platform === 'instagram' ? 'Instagram' : 'TikTok'}<small>posted on</small></span></div><a href="${esc(v.url)}" target="_blank" rel="noopener">See it on ${v.platform === 'instagram' ? 'Instagram' : 'TikTok'} ↗</a>`;
+    $('#pMob').innerHTML = `<b>${esc(v.hook)}</b>${esc(v.brand)}<div class="hint">swipe up for the next one</div>`;
   }
   function openPlayer(i, l) { list = l; idx = Math.max(0, i); P.hidden = false; document.body.style.overflow = 'hidden'; phone.pause(); show(); $('#pClose').focus(); }
   function close() { P.hidden = true; pv.pause(); pv.removeAttribute('src'); pv.load(); document.body.style.overflow = ''; }
