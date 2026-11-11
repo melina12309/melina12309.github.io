@@ -210,7 +210,7 @@
       <div>
         <div class="label">UGC creator · Stockholm · English &amp; Greek</div>
         <h1>Hi, I'm <em>Melina.</em><br>I make videos that <span class="rot" id="rot"><span>explain.</span></span></h1>
-        <p class="sub">Talking heads, product demos, tutorials, street interviews and skits for tech and marketing brands.</p>
+        <p class="sub">Talking heads, product demos, tutorials and skits for tech and marketing brands.</p>
         <p class="lede">I write the hook, film it and edit it. Everything on this page is real work, from brand accounts and my own.</p>
         <div class="ctas">
           <button class="btn" type="button" id="surpriseTop">Play a random one <span aria-hidden="true">🎲</span></button>
@@ -263,7 +263,6 @@
         <li><div class="row"><b>Talking-head explainer</b><span class="dots"></span><span class="p">On request</span></div><p>Turn news, a launch or a complicated idea into 60 seconds people follow.</p></li>
         <li><div class="row"><b>Product demo</b><span class="dots"></span><span class="p">On request</span></div><p>Screen recording plus me on camera, showing the one feature that matters.</p></li>
         <li><div class="row"><b>Skit or trend</b><span class="dots"></span><span class="p">On request</span></div><p>Office humor and trending formats that fit your brand.</p></li>
-        <li><div class="row"><b>Street interview</b><span class="dots"></span><span class="p">On request</span></div><p>Stopping strangers in Stockholm with a mic and one good question.</p></li>
         <li><div class="row"><b>Tutorial</b><span class="dots"></span><span class="p">On request</span></div><p>Step-by-step videos people save, like the funnel and lead-form series.</p></li>
         <li><div class="row"><b>Hooks and scripts only</b><span class="dots"></span><span class="p">On request</span></div><p>Ten opening lines and a script your own creators can film.</p></li>
       </ul>
@@ -308,7 +307,7 @@
 
   // stats + brands
   const views = V.reduce((a, v) => a + (v.views || 0), 0), likes = V.reduce((a, v) => a + (v.likes || 0), 0);
-  $('#stats').innerHTML = [[V.length, 'videos made for brands and my own accounts'], [new Set(V.map((v) => v.format)).size, 'formats, from explainers to street interviews'], [new Set(V.map((v) => v.brand)).size, 'brands and accounts'], [V.filter((v) => v.hookPick).length, 'hooks you can try below']]
+  $('#stats').innerHTML = [[V.length, 'videos made for brands and my own accounts'], [new Set(V.map((v) => v.format)).size, 'formats, from explainers to skits'], [new Set(V.map((v) => v.brand)).size, 'brands and accounts'], [V.filter((v) => v.hookPick).length, 'hooks you can try below']]
     .map(([n, t]) => `<div class="stat"><div class="n">${n}</div><div class="k">${t}</div></div>`).join('');
   const brands = {}; V.forEach((v) => { brands[v.brand] = (brands[v.brand] || 0) + 1; });
   $('#brands').innerHTML += Object.entries(brands).filter(([b]) => b !== 'Personal').sort((a, b) => b[1] - a[1]).map(([b, n]) => `<span class="b">${esc(b)}<small>${n} videos</small></span>`).join('');
