@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melina Giorgalletou · Social &amp; Influencer Marketing Lead</title>
-  <meta name="description" content="Melina Giorgalletou, social and influencer marketing lead in Stockholm. Creator programs, short-form video, paid and organic social, and AI-powered workflows across AI/tech, fintech, and beauty.">
-  <meta property="og:title" content="Melina Giorgalletou · Social & Influencer Marketing Lead">
-  <meta property="og:description" content="Creator programs, short-form video, paid and organic social, and AI-powered workflows.">
+  <title>Melina Giorgalletou · Social, Creator &amp; Paid Social Marketer</title>
+  <meta name="description" content="Melina Giorgalletou, social, creator and paid social marketer in Stockholm. Creator programs, Meta ads, short-form video, and AI tools built with Claude Code across AI/tech, fintech, and beauty.">
+  <meta property="og:title" content="Melina Giorgalletou · Social, Creator & Paid Social Marketer">
+  <meta property="og:description" content="Creator programs, Meta ads, short-form video, and AI tools built with Claude Code.">
   <meta property="og:image" content="https://melina12309.github.io/headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,103 +18,151 @@
       --muted: #8A8A8A;
       --line: #E6E4E0;
       --wash: #F5F3EF;
+      --blush: #FBE9E4;
       --paper: #FFFFFF;
+      --accent: #E5484D;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --mono: 'IBM Plex Mono', ui-monospace, monospace;
       --max: 1120px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: clip; }
     a { color: inherit; }
     img { display: block; max-width: 100%; height: auto; }
-    ::selection { background: var(--ink); color: var(--paper); }
+    ::selection { background: var(--accent); color: var(--paper); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
     .label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    em { font-style: italic; }
+    .hl { color: var(--accent); }
 
     /* nav */
     nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.9); backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s; }
     nav.scrolled { border-bottom-color: var(--line); }
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo { font-family: var(--serif); font-size: 1.15rem; text-decoration: none; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
     .nav-links a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--ink); }
-    .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--paper); padding: 13px 24px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; transition: transform .2s, background .2s; }
-    .btn:hover { background: #2a2a2a; transform: translateY(-1px); }
+    .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--paper); padding: 13px 24px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; transition: transform .2s, background .2s; white-space: nowrap; }
+    .btn:hover { background: var(--accent); transform: translateY(-1px); }
     .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
     .btn.ghost:hover { background: var(--ink); color: var(--paper); }
     .btn.sm { padding: 10px 18px; font-size: 0.75rem; }
 
     /* hero */
-    .hero { padding: 88px 0 72px; }
+    .hero { padding: 80px 0 72px; position: relative; }
+    .hero::before { content: ""; position: absolute; right: -10%; top: -20%; width: 60vw; height: 60vw; max-width: 760px; max-height: 760px; background: radial-gradient(closest-side, var(--blush), transparent); z-index: -1; }
     .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center; }
-    .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.025em; margin: 22px 0 28px; }
-    .hero h1 em { font-style: italic; }
-    .role-line { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.25; margin: -6px 0 22px; color: var(--body); }
+    .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.025em; margin: 22px 0 18px; }
+    .role-line { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.25; margin-bottom: 22px; color: var(--body); }
+    .rot { display: inline-block; color: var(--accent); font-style: italic; transition: opacity .35s, transform .35s; }
+    .rot.out { opacity: 0; transform: translateY(8px); }
     .hero p { font-size: 1.08rem; color: var(--body); max-width: 54ch; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
     .portrait { position: relative; width: 100%; max-width: 340px; justify-self: end; }
     .portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 25%; border-radius: 240px 240px 18px 18px; background: var(--wash); }
-    .portrait .tag { position: absolute; left: -18px; bottom: 28px; background: var(--paper); border-radius: 14px; padding: 14px 18px; box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-    .portrait .tag b { display: block; font-weight: 500; font-size: 0.92rem; }
-    .portrait .tag span { font-size: 0.78rem; color: var(--muted); }
-    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #2BB673; margin-right: 8px; vertical-align: 1px; }
+    .sticker { position: absolute; background: var(--paper); border-radius: 14px; padding: 12px 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); font-size: 0.86rem; font-weight: 500; white-space: nowrap; animation: bob 5s ease-in-out infinite; }
+    .sticker small { display: block; font-weight: 400; font-size: 0.74rem; color: var(--muted); }
+    .sticker.s1 { left: -24px; bottom: 32px; }
+    .sticker.s2 { right: -20px; top: 40px; background: var(--ink); color: var(--paper); animation-delay: -2.5s; }
+    .sticker.s2 small { color: rgba(255,255,255,0.6); }
+    @keyframes bob { 50% { transform: translateY(-6px); } }
+    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #2BB673; margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 0 0 rgba(43,182,115,.5); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(43,182,115,0); } 100% { box-shadow: 0 0 0 0 rgba(43,182,115,0); } }
 
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 80px; border-top: 1px solid var(--ink); }
     .stat { padding: 22px 20px 0 0; }
-    .stat b { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1; display: block; }
+    .stat b { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1; display: block; font-variant-numeric: tabular-nums; }
     .stat span { display: block; margin-top: 10px; font-size: 0.84rem; color: var(--body); max-width: 22ch; }
 
-    /* brands */
-    .brands { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; }
-    .brands .wrap { display: flex; align-items: center; gap: 40px; }
-    .brands ul { list-style: none; display: flex; flex-wrap: wrap; gap: 14px 38px; }
-    .brands li { font-family: var(--serif); font-size: 1.12rem; color: var(--ink); white-space: nowrap; }
-    .brands .label { flex-shrink: 0; }
+    /* marquee */
+    .brands { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; overflow: hidden; display: flex; align-items: center; gap: 32px; }
+    .brands .label { flex-shrink: 0; padding-left: max(32px, calc((100vw - var(--max)) / 2 + 32px)); }
+    .marquee { display: flex; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee ul { list-style: none; display: flex; gap: 56px; padding-right: 56px; flex-shrink: 0; animation: slide 32s linear infinite; }
+    .marquee li { font-family: var(--serif); font-size: 1.2rem; white-space: nowrap; }
+    .marquee li::after { content: "✦"; color: var(--accent); font-size: 0.7rem; margin-left: 56px; vertical-align: 3px; }
+    .brands:hover ul { animation-play-state: paused; }
+    @keyframes slide { to { transform: translateX(-100%); } }
 
     /* sections */
     section { padding: 112px 0; }
     .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 52px; }
     .head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.08; letter-spacing: -0.015em; margin-top: 14px; }
-    .head h2 em { font-style: italic; }
+    .head p { color: var(--body); max-width: 44ch; }
+
+    /* reel */
+    .reel-sec { background: var(--ink); color: var(--paper); padding-bottom: 96px; }
+    .reel-sec .label { color: rgba(255,255,255,0.5); }
+    .reel-sec .head p { color: rgba(255,255,255,0.7); }
+    .reel-sec .btn.ghost { color: var(--paper); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5); }
+    .reel-sec .btn.ghost:hover { background: var(--paper); color: var(--ink); }
+    .reel { --gut: max(32px, calc((100vw - var(--max)) / 2 + 32px)); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gut); padding: 4px var(--gut) 24px; scrollbar-width: none; }
+    .reel::-webkit-scrollbar { display: none; }
+    .clip { position: relative; flex: 0 0 220px; aspect-ratio: 9/16; border-radius: 18px; overflow: hidden; background: #1c1c1c; scroll-snap-align: start; text-decoration: none; color: var(--paper); transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+    .clip:hover { transform: translateY(-6px) rotate(-1deg); }
+    .clip img, .clip video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .clip video { opacity: 0; transition: opacity .3s; }
+    .clip.playing video { opacity: 1; }
+    .clip .shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85)); }
+    .clip .meta { position: absolute; left: 14px; right: 14px; bottom: 14px; }
+    .clip .meta i { font-style: normal; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--accent); padding: 3px 7px; border-radius: 999px; }
+    .clip .meta b { display: block; margin-top: 8px; font-weight: 500; font-size: 0.88rem; line-height: 1.3; }
+    .clip .play { position: absolute; top: 12px; right: 12px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); display: grid; place-items: center; font-size: 0.7rem; }
 
     /* work */
     .work { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .card { background: var(--wash); border-radius: 20px; padding: 36px; display: flex; flex-direction: column; min-height: 340px; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; }
+    .card { background: var(--wash); border-radius: 20px; padding: 36px; display: flex; flex-direction: column; min-height: 340px; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; overflow: hidden; }
     .card:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.07); }
     .card.dark { background: var(--ink); color: var(--paper); }
     .card.dark p, .card.dark .label { color: rgba(255,255,255,0.65); }
+    .card.blush { background: var(--blush); }
     .card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.65rem; line-height: 1.2; margin: 14px 0 12px; }
     .card p { color: var(--body); font-size: 0.96rem; }
     .card .nums { display: flex; gap: 36px; flex-wrap: wrap; margin-top: auto; padding-top: 30px; }
     .card .nums b { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1; display: block; }
+    .card.dark .nums b { color: var(--accent); }
     .card .nums span { font-size: 0.76rem; color: var(--muted); }
     .card.dark .nums span { color: rgba(255,255,255,0.55); }
     .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 30px; }
-    .pills span { font-size: 0.78rem; border: 1px solid #D9D6D0; border-radius: 999px; padding: 6px 12px; color: var(--body); }
-    .more { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 36px; border: 1px solid var(--line); border-radius: 20px; text-decoration: none; transition: border-color .2s; }
-    .more:hover { border-color: var(--ink); }
+    .pills span { font-size: 0.78rem; border: 1px solid #D9D6D0; border-radius: 999px; padding: 6px 12px; color: var(--body); background: rgba(255,255,255,0.5); }
+    .more { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 36px; border: 1px solid var(--line); border-radius: 20px; text-decoration: none; transition: border-color .2s, background .2s; }
+    .more:hover { border-color: var(--accent); background: var(--blush); }
     .more b { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; display: block; }
     .more span { font-size: 0.9rem; color: var(--body); }
     .arrow { font-size: 1.4rem; transition: transform .2s; }
     .more:hover .arrow { transform: translateX(4px); }
 
+    /* ai */
+    .ai { background: var(--wash); }
+    .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .tool { background: var(--paper); border-radius: 20px; padding: 30px; border: 1px solid var(--line); transition: border-color .2s, transform .3s; }
+    .tool:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .tool .ico { width: 44px; height: 44px; border-radius: 12px; background: var(--blush); color: var(--accent); display: grid; place-items: center; font-family: var(--mono); font-size: 0.9rem; font-weight: 500; }
+    .tool h3 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; margin: 18px 0 8px; line-height: 1.25; }
+    .tool p { color: var(--body); font-size: 0.93rem; }
+    .stack { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .stack span { font-family: var(--mono); font-size: 0.74rem; border-radius: 999px; padding: 7px 14px; background: var(--ink); color: var(--paper); }
+    .stack span.m { background: var(--accent); }
+
     /* experience */
     .exp { border-top: 1px solid var(--ink); }
-    .role { display: grid; grid-template-columns: 180px 1fr 1.3fr; gap: 32px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 180px 1fr 1.3fr; gap: 32px; padding: 30px 0; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
+    .role:hover { background: linear-gradient(90deg, var(--blush), transparent); }
     .role .when { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); padding-top: 4px; }
     .role h3 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; line-height: 1.3; }
     .role .co { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
     .role p { color: var(--body); font-size: 0.95rem; }
-    .now { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 3px 8px; border-radius: 999px; margin-left: 8px; vertical-align: 3px; }
+    .now { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--accent); color: var(--paper); padding: 3px 8px; border-radius: 999px; margin-left: 8px; vertical-align: 3px; }
 
     /* about */
-    .about { background: var(--wash); }
     .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; }
     .about-text p { font-size: 1.12rem; color: var(--body); margin-bottom: 20px; }
-    .about-text p:first-child::first-letter { font-family: var(--serif); float: left; font-size: 3.6rem; line-height: 0.9; padding: 6px 10px 0 0; color: var(--ink); }
+    .about-text p:first-of-type::first-letter { font-family: var(--serif); float: left; font-size: 3.6rem; line-height: 0.9; padding: 6px 10px 0 0; color: var(--accent); }
     .facts { display: grid; gap: 26px; align-content: start; }
     .facts div > b { display: block; font-weight: 500; margin-top: 6px; font-size: 0.98rem; line-height: 1.5; }
     .facts div > b a { text-underline-offset: 3px; }
@@ -122,18 +170,20 @@
     /* channels */
     .chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .chip { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px 10px 12px; text-decoration: none; font-size: 0.88rem; transition: border-color .2s, background .2s; }
-    .chip:hover { border-color: var(--ink); }
+    .chip:hover { border-color: var(--accent); background: var(--blush); }
     .chip i { font-style: normal; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: var(--wash); border-radius: 999px; padding: 3px 8px; }
     .chip b { font-weight: 500; }
     .chip span { color: var(--muted); }
 
     /* contact */
-    .contact { background: var(--ink); color: var(--paper); text-align: center; padding: 128px 0; }
+    .contact { background: var(--ink); color: var(--paper); text-align: center; padding: 128px 0; position: relative; overflow: hidden; }
+    .contact::before { content: ""; position: absolute; left: 50%; top: 100%; width: 900px; height: 900px; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(229,72,77,0.35), transparent); }
+    .contact .wrap { position: relative; }
     .contact .label { color: rgba(255,255,255,0.5); }
     .contact h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.05; letter-spacing: -0.02em; margin: 18px auto 22px; max-width: 16ch; }
-    .contact h2 em { font-style: italic; }
     .contact p { color: rgba(255,255,255,0.7); max-width: 50ch; margin: 0 auto 36px; }
     .contact .btn { background: var(--paper); color: var(--ink); }
+    .contact .btn:hover { background: var(--accent); color: var(--paper); }
     .contact .btn.ghost { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5); }
     .contact .btn.ghost:hover { background: var(--paper); color: var(--ink); }
     .contact .hero-actions { justify-content: center; }
@@ -143,21 +193,30 @@
     /* motion */
     .js .fade { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
     .js .fade.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .js .fade { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .fade { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+      .marquee ul, .sticker, .dot { animation: none; }
+    }
 
     @media (max-width: 900px) {
       .wrap { padding: 0 20px; }
       .nav-links { display: none; }
       .hero { padding: 48px 0 56px; }
       .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-      .portrait { max-width: 260px; justify-self: start; }
-      .portrait .tag { left: 12px; }
+      .portrait { max-width: 260px; justify-self: start; margin-left: 24px; }
+      .sticker.s1 { left: -20px; }
+      .sticker.s2 { right: -40px; }
       .stats { grid-template-columns: repeat(2, 1fr); margin-top: 56px; }
       .stat { padding-bottom: 22px; }
-      .brands .wrap { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .brands { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .brands .label { padding-left: 20px; }
+      .marquee { width: 100%; }
       section { padding: 80px 0; }
       .head { flex-direction: column; align-items: flex-start; }
-      .work { grid-template-columns: 1fr; }
+      .reel { --gut: 20px; }
+      .clip { flex-basis: 180px; }
+      .work, .tools { grid-template-columns: 1fr; }
       .card { min-height: 0; padding: 28px; }
       .role { grid-template-columns: 1fr; gap: 8px; }
       .about-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -170,11 +229,12 @@
 
 <nav id="nav">
   <div class="wrap">
-    <a href="#top" class="logo">Melina Giorgalletou</a>
+    <a href="#top" class="logo">Melina Giorgalletou<span>.</span></a>
     <ul class="nav-links">
+      <li><a href="#reel">On camera</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#ai">AI tools</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="portfolio/">Portfolio</a></li>
     </ul>
     <a href="#contact" class="btn sm">Get in touch</a>
@@ -187,47 +247,55 @@
       <div>
         <div class="label">Stockholm · Open to relocation</div>
         <h1>Hi, I'm <em>Melina</em>.</h1>
-        <div class="role-line">Social &amp; influencer marketing lead</div>
-        <p>I studied media and journalism in New York and earned my master's in Marketing Communication in Stockholm. Since then I've spent four years across AI, fintech, and beauty, building creator programs, producing short-form video, and running paid and organic social across global markets. I also build my own AI tools with Claude Code so the manual work scales.</p>
+        <div class="role-line">I run <span class="rot" id="rot">creator programs</span></div>
+        <p>Four years across AI, fintech and beauty, building creator programs, producing short-form video, and running paid and organic social on Meta, TikTok and LinkedIn across global markets. When a step repeats, I build an AI tool for it with Claude Code so the work scales.</p>
         <div class="hero-actions">
-          <a href="#work" class="btn">See my work <span class="arrow">→</span></a>
+          <a href="#reel" class="btn">Watch my work <span class="arrow">→</span></a>
           <a href="mailto:melinageorgalletou@outlook.com" class="btn ghost">Email me</a>
         </div>
       </div>
       <div class="portrait">
         <img src="headshot.jpg" alt="Portrait of Melina Giorgalletou" width="900" height="900">
-        <div class="tag"><b><span class="dot"></span>Now at Heyflow</b></div>
+        <div class="sticker s1"><span class="dot"></span>Now at Heyflow</div>
+        <div class="sticker s2">Built with Claude Code<small>dashboards, scrapers, reports</small></div>
       </div>
     </div>
     <div class="stats fade">
-      <div class="stat"><b>$130K+</b><span>quarterly creator budget managed</span></div>
-      <div class="stat"><b>40+</b><span>creator partnerships run end to end</span></div>
-      <div class="stat"><b>+35%</b><span>engagement across six global markets</span></div>
-      <div class="stat"><b>−18%</b><span>cost per lead in regulated fintech</span></div>
+      <div class="stat"><b data-count="130" data-pre="$" data-suf="K+">$130K+</b><span>quarterly creator budget managed</span></div>
+      <div class="stat"><b data-count="40" data-suf="+">40+</b><span>creator partnerships run end to end</span></div>
+      <div class="stat"><b data-count="35" data-pre="+" data-suf="%">+35%</b><span>engagement across six global markets</span></div>
+      <div class="stat"><b data-count="18" data-pre="−" data-suf="%">−18%</b><span>cost per lead in regulated fintech</span></div>
     </div>
   </div>
 </header>
 
-<div class="brands">
-  <div class="wrap">
-    <span class="label">Worked with</span>
-    <ul>
-      <li>Heyflow</li>
-      <li>Supernormal</li>
-      <li>IQ Option</li>
-      <li>Honestly Pure Beauty</li>
-      <li>TV Guide Magazine</li>
-      <li>Build Club</li>
-    </ul>
+<div class="brands" aria-label="Worked with">
+  <span class="label">Worked with</span>
+  <div class="marquee">
+    <ul><li>Heyflow</li><li>Supernormal</li><li>IQ Option</li><li>Honestly Pure Beauty</li><li>Girls in Beta</li><li>TV Guide Magazine</li><li>Build Club</li></ul>
+    <ul aria-hidden="true"><li>Heyflow</li><li>Supernormal</li><li>IQ Option</li><li>Honestly Pure Beauty</li><li>Girls in Beta</li><li>TV Guide Magazine</li><li>Build Club</li></ul>
   </div>
 </div>
+
+<section id="reel" class="reel-sec">
+  <div class="wrap">
+    <div class="head fade">
+      <div>
+        <div class="label">On camera</div>
+        <h2>Videos I've <em class="hl">made</em></h2>
+      </div>
+      <a href="ugc/" class="btn ghost sm">All 60 videos →</a>
+    </div>
+  </div>
+  <div class="reel" id="reelTrack" aria-label="Video reel"></div>
+</section>
 
 <section id="work">
   <div class="wrap">
     <div class="head fade">
       <div>
         <div class="label">Selected work</div>
-        <h2>Campaigns &amp; <em>impact</em></h2>
+        <h2>Campaigns &amp; <em class="hl">impact</em></h2>
       </div>
     </div>
     <div class="work">
@@ -242,24 +310,24 @@
       </article>
       <article class="card fade">
         <div class="label">IQ Option · Fintech · 2022–2025</div>
-        <h3>Global social across six markets</h3>
-        <p>Content strategy and paid social for a trading platform in LATAM, Asia and the EU, with every post going through compliance review.</p>
+        <h3>Meta and TikTok ads across six markets</h3>
+        <p>Paid and organic social for a trading platform in LATAM, Asia and the EU, with creative and targeting localized for each market and every post going through compliance review.</p>
         <div class="nums">
           <div><b>+35%</b><span>engagement</span></div>
           <div><b>−18%</b><span>cost per lead</span></div>
           <div><b>+27%</b><span>AI visuals vs. standard</span></div>
         </div>
       </article>
-      <article class="card fade">
+      <article class="card blush fade">
         <div class="label">Heyflow · AI / Tech · 2026–now</div>
         <h3>A creator program, from scratch again</h3>
-        <p>Building Heyflow's creator program, leading social strategy across LinkedIn, TikTok, Instagram and YouTube, and creating content for paid ads alongside short-form video and motion.</p>
-        <div class="pills"><span>Creator program</span><span>Social strategy</span><span>Paid ad creative</span><span>Motion &amp; video</span></div>
+        <p>Building Heyflow's creator program, leading social across LinkedIn, TikTok, Instagram and YouTube, and making paid ad creative and short-form video for Meta advertisers.</p>
+        <div class="pills"><span>Creator program</span><span>Social strategy</span><span>Meta ad creative</span><span>Motion &amp; video</span></div>
       </article>
       <article class="card fade">
         <div class="label">Honestly Pure Beauty · Beauty · 2025</div>
         <h3>Owned social for a premium Nordic beauty brand</h3>
-        <p>Ran Instagram and TikTok end to end with the founders: content strategy, art direction on shoots, creator casting, UGC and weekly performance reporting.</p>
+        <p>Ran Instagram, TikTok and Meta ads end to end with the founders: content strategy, art direction on shoots, creator casting, UGC and weekly performance reporting.</p>
         <div class="nums">
           <div><b>3x</b><span>Reel reach in two months</span></div>
           <div><b>+28%</b><span>save and share rate</span></div>
@@ -277,12 +345,33 @@
   </div>
 </section>
 
-<section id="experience" style="padding-top: 0;">
+<section id="ai" class="ai">
+  <div class="wrap">
+    <div class="head fade">
+      <div>
+        <div class="label">AI tools</div>
+        <h2>What I build with <em class="hl">Claude Code</em></h2>
+      </div>
+      <p>I build my own tools so a small team can run a big program. These run my creator and social reporting every week.</p>
+    </div>
+    <div class="tools">
+      <div class="tool fade"><div class="ico">01</div><h3>Live creator dashboard</h3><p>One view for leadership with every creator, post, view count and signup, updated automatically.</p></div>
+      <div class="tool fade"><div class="ico">02</div><h3>Social scrapers &amp; rankings</h3><p>Scrapers pull post metrics from TikTok, Instagram and YouTube and rank creators each week, so nobody copies numbers by hand.</p></div>
+      <div class="tool fade"><div class="ico">03</div><h3>Tracked links &amp; auto reports</h3><p>A link generator gives every creator and ad its own UTM, and a weekly report ties each one to signups and cost.</p></div>
+    </div>
+    <div class="stack fade">
+      <span>Claude Code</span><span>Claude</span><span>Python</span><span>Apify</span><span>Google Sheets API</span><span>BigQuery</span><span>GA4</span><span>PostHog</span>
+      <span class="m">Meta Ads Manager</span><span class="m">Meta Business Suite</span><span class="m">LinkedIn Ads</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
   <div class="wrap">
     <div class="head fade">
       <div>
         <div class="label">Experience</div>
-        <h2>Where I've <em>worked</em></h2>
+        <h2>Where I've <em class="hl">worked</em></h2>
       </div>
       <a href="https://www.linkedin.com/in/melina-giorgalletou/" class="btn ghost sm">LinkedIn →</a>
     </div>
@@ -290,52 +379,57 @@
       <div class="role">
         <div class="when">Sep 2026 – Now</div>
         <div><h3>Creator &amp; Social Media Manager <span class="now">Now</span></h3><div class="co">Heyflow · Remote, Sweden</div></div>
-        <p>Built the creator program from scratch. Lead social strategy across four platforms and create content for paid ads, short-form video and motion.</p>
+        <p>Built the creator program from scratch. Lead social strategy across four platforms and create content for paid ads, short-form video and motion, using Claude Code for creator tracking and KPI reporting.</p>
+      </div>
+      <div class="role">
+        <div class="when">2026 – Now</div>
+        <div><h3>Co-Founder</h3><div class="co">Girls in Beta · AI automation</div></div>
+        <p>Co-run an AI automation studio with my sister, building dashboards, scrapers and reporting systems for marketing agencies and brands.</p>
       </div>
       <div class="role">
         <div class="when">Aug 2025 – Sep 2026</div>
         <div><h3>Social Media &amp; Influencer Marketing Lead</h3><div class="co">Supernormal · Stockholm</div></div>
-        <p>Led social across five platforms and a 40+ creator program with a $130K+ quarterly budget. Built reporting in GA4 and PostHog, and planned community events in Stockholm and London.</p>
+        <p>Led social across five platforms and a 40+ creator program with a $130K+ quarterly budget. Ran paid social on Meta and LinkedIn, built an AI marketing ops stack with Claude Code, and hosted community events in Stockholm and London.</p>
       </div>
       <div class="role">
         <div class="when">Feb – Sep 2025</div>
         <div><h3>Social Media &amp; Creative Content Manager</h3><div class="co">Honestly Pure Beauty · Stockholm</div></div>
-        <p>Art-directed and produced 20+ assets a month and ran a UGC creator network, raising save and share rates 28%.</p>
+        <p>Art-directed and produced 20+ organic and paid assets a month, ran Meta ads and a UGC creator network, and raised save and share rates 28%.</p>
       </div>
       <div class="role">
         <div class="when">Aug 2022 – Feb 2025</div>
         <div><h3>Global Influencer &amp; Social Media Specialist</h3><div class="co">IQ Option · Limassol, Cyprus</div></div>
-        <p>Grew from assistant to specialist, owning social for six markets under compliance review. Raised engagement 35% and cut cost per lead 18%.</p>
+        <p>Grew from assistant to specialist, running Meta and TikTok campaigns for six markets under compliance review. Raised engagement 35% and cut cost per lead 18%.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about" class="about">
+<section id="about" style="padding-top: 0;">
   <div class="wrap">
     <div class="about-grid">
       <div class="about-text fade">
         <div class="label" style="margin-bottom: 22px;">About</div>
         <p>I grew up between Cyprus and New York, which gave me an instinct for how stories land across cultures. I studied journalism at Hunter College and had my first bylines in TV Guide Magazine before I graduated.</p>
-        <p>I work autonomously. I've streamlined my workflow so I can run a campaign independently from start to finish: briefing, recruiting creators, shooting, editing, publishing and reporting. When a step repeats, I build a tool for it with Claude Code, which is how I ran a 40+ creator program on my own. Years of teaching also made me good at turning complex ideas into simple ones, which is most of what great social content does.</p>
+        <p>I work autonomously. I've streamlined my workflow so I can run a campaign independently from start to finish: briefing, recruiting creators, shooting, editing, publishing and reporting. When a step repeats, I build a tool for it with Claude Code. Years of teaching also made me good at turning complex ideas into simple ones, which is most of what great social content does.</p>
         <p>Outside my day job, my sister and I run Girls in Beta, where we build AI automations for agencies and brands.</p>
       </div>
       <div class="facts fade">
         <div><span class="label">Education</span><b>MSc Marketing Communication, Stockholm University<br>BA Media Studies &amp; Journalism, Hunter College (CUNY)</b></div>
         <div><span class="label">Languages</span><b>Greek (native) · English (C2) · Italian · Swedish</b></div>
         <div><span class="label">Published in</span><b><a href="https://www.tvinsider.com/author/melina-giorgalletou/">TV Guide Magazine</a> · <a href="https://brie.hunter.cuny.edu/hunterathenian/author/melinagiorgalletou/">The Athenian</a></b></div>
-        <div><span class="label">Tools</span><b>Premiere Pro, After Effects, CapCut, Figma, Meta Business Suite, GA4, PostHog, Looker Studio, Claude Code</b></div>
+        <div><span class="label">Tools</span><b>Meta Ads Manager, Meta Business Suite, LinkedIn Ads, GA4, PostHog, Looker Studio, Claude Code, Premiere Pro, After Effects, CapCut, Figma</b></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="channels">
+<section id="channels" style="padding-top: 0;">
   <div class="wrap">
     <div class="head fade">
       <div>
         <div class="label">Channels</div>
-        <h2>Accounts I've <em>run</em></h2>
+        <h2>Accounts I've <em class="hl">run</em></h2>
       </div>
     </div>
     <div class="chips fade">
@@ -370,13 +464,66 @@
   </div>
 </footer>
 
+<script src="ugc/videos.js"></script>
 <script>
   document.documentElement.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const nav = document.getElementById('nav');
   addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+  // rotating role line
+  const words = ['creator programs', 'Meta ads', 'UGC campaigns', 'AI-powered workflows', 'paid social'];
+  const rot = document.getElementById('rot');
+  if (!reduce) {
+    let i = 0;
+    setInterval(() => {
+      rot.classList.add('out');
+      setTimeout(() => { i = (i + 1) % words.length; rot.textContent = words[i]; rot.classList.remove('out'); }, 350);
+    }, 2400);
+  }
+
+  // video reel: starred clips, brands mixed
+  const track = document.getElementById('reelTrack');
+  const all = (window.UGC || []).filter(v => v.star && v.brand !== 'Personal');
+  const byBrand = {};
+  all.forEach(v => (byBrand[v.brand] = byBrand[v.brand] || []).push(v));
+  const picks = [];
+  for (let r = 0; picks.length < 12 && r < 20; r++) Object.values(byBrand).forEach(list => { if (list[r] && picks.length < 12) picks.push(list[r]); });
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  track.innerHTML = picks.map(v => `
+    <a class="clip" href="ugc/" data-id="${esc(v.id)}">
+      <img src="ugc/media/${esc(v.id)}.jpg" alt="" loading="lazy">
+      <video muted playsinline loop preload="none"></video>
+      <span class="shade"></span><span class="play">▶</span>
+      <span class="meta"><i>${esc(v.brand)}</i><b>${esc(v.hook)}</b></span>
+    </a>`).join('');
+  const start = c => { const vid = c.querySelector('video'); if (!vid.src) vid.src = 'ugc/media/' + c.dataset.id + '.mp4'; vid.play().then(() => c.classList.add('playing')).catch(() => {}); };
+  const stop = c => { c.classList.remove('playing'); c.querySelector('video').pause(); };
+  const hover = matchMedia('(hover: hover)').matches;
+  track.querySelectorAll('.clip').forEach(c => {
+    if (hover) { c.addEventListener('mouseenter', () => start(c)); c.addEventListener('mouseleave', () => stop(c)); }
+  });
+  // on touch screens, play the clip that's in view
+  if (!hover && !reduce && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start(e.target) : stop(e.target)), { root: track, threshold: 0.9 });
+    track.querySelectorAll('.clip').forEach(c => vio.observe(c));
+  }
+
+  // count-up stats
+  const countUp = el => {
+    const n = +el.dataset.count, pre = el.dataset.pre || '', suf = el.dataset.suf || '', t0 = performance.now();
+    const tick = t => { const p = Math.min((t - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3); el.textContent = pre + Math.round(n * e) + suf; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  };
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        if (!reduce) e.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(e.target);
+      });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade').forEach(el => io.observe(el));
   } else {
