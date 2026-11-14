@@ -188,6 +188,7 @@
     @media (prefers-reduced-motion: reduce) {
       .js .fade { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
+      .marquee ul { animation: none; }
     }
 
     @media (max-width: 900px) {
@@ -471,7 +472,8 @@
 
   // video reel: starred clips, brands mixed
   const track = document.getElementById('reelTrack');
-  const all = (window.UGC || []).filter(v => v.star && v.brand !== 'Personal');
+  const hide = ['7569377874529029398', 'DcBNYhRtS-q'];
+  const all = (window.UGC || []).filter(v => v.star && v.brand !== 'Personal' && !hide.includes(v.id));
   const byBrand = {};
   all.forEach(v => (byBrand[v.brand] = byBrand[v.brand] || []).push(v));
   const picks = [];
