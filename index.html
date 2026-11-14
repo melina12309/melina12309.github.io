@@ -38,7 +38,7 @@
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
     .label b { color: var(--rose); font-weight: 500; }
-    em { font-style: italic; }
+    em { font-style: normal; }
 
     /* nav */
     nav { position: sticky; top: 0; z-index: 20; background: rgba(251,248,244,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s; }
@@ -94,7 +94,7 @@
     /* ticker */
     .ticker { background: var(--rose); color: #fff; overflow: hidden; display: flex; padding: 15px 0; }
     .ticker ul { list-style: none; display: flex; gap: 40px; padding-right: 40px; flex-shrink: 0; animation: slide 40s linear infinite; }
-    .ticker li { font-family: var(--serif); font-style: italic; font-size: 1.15rem; white-space: nowrap; }
+    .ticker li { font-family: var(--serif); font-size: 1.15rem; white-space: nowrap; }
     .ticker li::after { content: "✦"; font-style: normal; font-size: 0.7rem; margin-left: 40px; vertical-align: 3px; opacity: 0.7; }
     @keyframes slide { to { transform: translateX(-100%); } }
 
@@ -146,7 +146,7 @@
     .nums { display: flex; gap: 32px; flex-wrap: wrap; margin-top: auto; padding-top: 26px; }
     .nums b { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1; display: block; color: var(--rose); }
     .nums span { font-size: 0.74rem; color: var(--muted); }
-    .more { margin-top: 24px; display: inline-flex; gap: 10px; font-family: var(--serif); font-style: italic; font-size: 1.2rem; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; }
+    .more { margin-top: 24px; display: inline-flex; gap: 10px; font-family: var(--serif); font-size: 1.2rem; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; }
     .more:hover { color: var(--rose); }
 
     /* reel */
@@ -390,7 +390,7 @@
     <div class="head fade">
       <div>
         <div class="label">04 · Creative</div>
-        <h2>Yes, that's me in <em>all of these</em></h2>
+        <h2>Videos I've <em>made</em></h2>
       </div>
       <a href="ugc/" class="btn sm">All 60 videos →</a>
     </div>
